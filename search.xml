@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Markdown常用语法</title>
+    <url>/2022/06/18/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成。</p>
+<span id="more"></span>
+
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a><a name="Name">标题</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="段落样式"><a href="#段落样式" class="headerlink" title="段落样式"></a>段落样式</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">~~Hell World~~</span><br></pre></td></tr></table></figure>
+
+<p><del>Hell World</del></p>
+<h3 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;带下划线文本&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+
+<p><u>带下划线文本</u></p>
+<h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[^名称]</span><br><span class="line">[^名称]: 解释名称</span><br><span class="line">例：</span><br><span class="line">我用Hexo[^<span class="number">1</span>]搭建了第一个博客</span><br><span class="line">[^<span class="number">1</span>]:一个很好用的博客框架</span><br></pre></td></tr></table></figure>
+
+<p>我用Hexo<a href="%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6">^1</a>搭建了第一个博客</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 第一项</span><br><span class="line"><span class="number">2.</span> 第二项</span><br><span class="line"><span class="number">3.</span> 第三项</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项</li>
+</ol>
+<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> 第一项：</span><br><span class="line">    * 第一项嵌套的第一个元素</span><br><span class="line">    * 第一项嵌套的第二个元素</span><br><span class="line"><span class="number">2.</span> 第二项：</span><br><span class="line">    * 第二项嵌套的第一个元素</span><br><span class="line">    * 第二项嵌套的第二个元素</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>第一项：</p>
+<ul>
+<li><p>第一项嵌套的第一个元素</p>
+</li>
+<li><p>第一项嵌套的第二个元素</p>
+</li>
+</ul>
+</li>
+<li><p>第二项：</p>
+<ul>
+<li><p>第二项嵌套的第一个元素</p>
+</li>
+<li><p>第二项嵌套的第二个元素</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="一行代码"><a href="#一行代码" class="headerlink" title="一行代码"></a>一行代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">`printf()`</span><br></pre></td></tr></table></figure>
+
+<h3 id="一段代码"><a href="#一段代码" class="headerlink" title="一段代码"></a>一段代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">```加回车</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> [菜鸟教程](https://www.runoob.com)</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> &lt;https://www.runoob.com&gt;</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> [百度][<span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span>]:https:www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.runoob.com/">菜鸟教程</a></p>
+<p><a href="https://www.runoob.com/">https://www.runoob.com</a></p>
+<p><a href="https://www.baidu.com/">百度</a></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> ![RUNOOB](http://static.runoob.com/images/runoob-logo.png )</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> ![RUNOOB](http://static.runoob.com/images/runoob-logo.png <span class="string">&quot;标题&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> [RUNOOB][<span class="number">2</span>]</span><br><span class="line">[<span class="number">2</span>]:http://static.runoob.com/images/runoob-logo.png </span><br></pre></td></tr></table></figure>
+
+<p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB"></p>
+<p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB" title="标题"></p>
+<p><a href="http://static.runoob.com/images/runoob-logo.png">RUNOOB</a></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">|  表头   | 表头  |</span><br><span class="line">|  ----  | ----  |</span><br><span class="line">| 单元格  | 单元格 |</span><br><span class="line">| 单元格  | 单元格 |</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody></table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="补充样式"><a href="#补充样式" class="headerlink" title="补充样式"></a>补充样式</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&lt;font size=<span class="number">5</span>&gt;&lt;/font&gt; 字体大小</span><br><span class="line">&lt;a style=<span class="string">&quot;color:black&quot;</span>&gt;&lt;/a&gt; 字体颜色</span><br><span class="line">&lt;a style=<span class="string">&quot;text-decoration:none&quot;</span>&gt;&lt;/a&gt; 取消链接下划线</span><br></pre></td></tr></table></figure>
+
+<h3 id="页内跳转"><a href="#页内跳转" class="headerlink" title="页内跳转"></a>页内跳转</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;#Name&quot;</span>&gt;&lt;/a&gt; 跳转的起点</span><br><span class="line">&lt;a name=<span class="string">&quot;Name&quot;</span>&gt;&lt;/a&gt; 跳转的终点</span><br></pre></td></tr></table></figure>
+
+<p><a href="#Name">跳转的起点</a></p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+</search>
