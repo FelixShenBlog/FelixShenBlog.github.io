@@ -3,15 +3,18 @@
   <entry>
     <title>Markdown常用语法</title>
     <url>/2022/06/18/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成。</p>
 <span id="more"></span>
 
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a><a name="Name">标题</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="段落样式"><a href="#段落样式" class="headerlink" title="段落样式"></a>段落样式</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br></pre></td></tr></table></figure>
 
+
+<h2 id="段落样式"><a href="#段落样式" class="headerlink" title="段落样式"></a>段落样式</h2><h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">**粗体文本**</span><br><span class="line">***斜粗体文本***</span><br></pre></td></tr></table></figure>
+
+<p><em>斜体文本</em><br><strong>粗体文本</strong><br><em><strong>斜粗体文本</strong></em></p>
 <h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">***</span><br></pre></td></tr></table></figure>
 
 <hr>
@@ -23,7 +26,7 @@
 <p><u>带下划线文本</u></p>
 <h3 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[^名称]</span><br><span class="line">[^名称]: 解释名称</span><br><span class="line">例：</span><br><span class="line">我用Hexo[^<span class="number">1</span>]搭建了第一个博客</span><br><span class="line">[^<span class="number">1</span>]:一个很好用的博客框架</span><br></pre></td></tr></table></figure>
 
-<p>我用Hexo<a href="%E4%B8%80%E4%B8%AA%E5%BE%88%E5%A5%BD%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6">^1</a>搭建了第一个博客</p>
+<p>我用Hexo<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="一个很好用的博客框架">[1]</span></a></sup>搭建了第一个博客</p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">* 第一项</span><br><span class="line">* 第二项</span><br><span class="line">* 第三项</span><br></pre></td></tr></table></figure>
 
 <ul>
@@ -64,6 +67,8 @@
 
 
 
+
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> [菜鸟教程](https://www.runoob.com)</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> &lt;https://www.runoob.com&gt;</span><br><span class="line">    </span><br><span class="line"><span class="number">3.</span> [百度][<span class="number">1</span>]</span><br><span class="line">[<span class="number">1</span>]:https:www.baidu.com</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://www.runoob.com/">菜鸟教程</a></p>
@@ -97,7 +102,7 @@
 <h3 id="页内跳转"><a href="#页内跳转" class="headerlink" title="页内跳转"></a>页内跳转</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;#Name&quot;</span>&gt;&lt;/a&gt; 跳转的起点</span><br><span class="line">&lt;a name=<span class="string">&quot;Name&quot;</span>&gt;&lt;/a&gt; 跳转的终点</span><br></pre></td></tr></table></figure>
 
 <p><a href="#Name">跳转的起点</a></p>
-]]></content>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">一个很好用的博客框架<a href="#fnref:1" rev="footnote"> ↩</a></span></li></ol></div></div>]]></content>
       <categories>
         <category>Markdown</category>
       </categories>
