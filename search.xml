@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java数组</title>
+    <url>/2022/06/20/Java%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>基础不牢，地动山摇。之前一直没有基础地过一遍Java，写代码也都是不懂了再去网上找资料，这样效率实在太低了。所以呢，还是自己每次记录一点，以后找也方便，也方便记忆^_^</p>
+<span id="more"></span>
+<h2 id="声明数组变量"><a href="#声明数组变量" class="headerlink" title="声明数组变量"></a>声明数组变量</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList;	<span class="comment">//首选的方法</span></span><br><span class="line">或</span><br><span class="line"><span class="type">int</span> myList[];	<span class="comment">//效果相同，不是首选的方法</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+
+<p>上面语法做了两件事情</p>
+<ul>
+<li>一、使用int[8]创建了一个数组</li>
+<li>二、把新创建的数组引用赋值给变量myList</li>
+</ul>
+<h2 id="声明和创建一气呵成"><a href="#声明和创建一气呵成" class="headerlink" title="声明和创建一气呵成"></a>声明和创建一气呵成</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">9</span>];</span><br><span class="line">或</span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="For-Each-循环"><a href="#For-Each-循环" class="headerlink" title="For-Each 循环"></a>For-Each 循环</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i:myList)&#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数组作为函数参数"><a href="#数组作为函数参数" class="headerlink" title="数组作为函数参数"></a>数组作为函数参数</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span>[] array)</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    System.out.print(array[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">printArray(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="多维数组的动态初始化"><a href="#多维数组的动态初始化" class="headerlink" title="多维数组的动态初始化"></a>多维数组的动态初始化</h2><h3 id="一步到位"><a href="#一步到位" class="headerlink" title="一步到位"></a>一步到位</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[][] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>][<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+
+<h3 id="分别分配"><a href="#分别分配" class="headerlink" title="分别分配"></a>分别分配</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[][] s = <span class="keyword">new</span> [<span class="number">2</span>][];</span><br><span class="line">s[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">2</span>];</span><br><span class="line">s[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">3</span>];</span><br><span class="line">s[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Good&quot;</span>);</span><br><span class="line">s[<span class="number">0</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Luck&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;to&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;you&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">2</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析:</strong></p>
+<p><strong>s[0]&#x3D;new String[2]</strong> 和 <strong>s[1]&#x3D;new String[3]</strong> 是为最高维分配引用空间，也就是为最高维限制其能保存数据的最长的长度，然后再为其每个数组元素单独分配空间 <strong>s0&#x3D;new String(“Good”)</strong> 等操作</p>
+<h2 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h2><p><strong>java.util.Arrays</strong>提供了方便操作数组的方法</p>
+<h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 填充函数</span></span><br><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">Arrays.fill(myList,<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">	System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5 5 5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">Arrays.sort(myList);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">    System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2 3 4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] _myList = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">if</span>(Arrays.equals(myList,_myList))&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Y&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Y</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="binarySearch"><a href="#binarySearch" class="headerlink" title="binarySearch"></a>binarySearch</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二分查找只适用于排好序的数组</span></span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line">System.out.println(Arrays.binarySearch(myList,<span class="number">6</span>));</span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown常用语法</title>
     <url>/2022/06/18/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成。</p>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成，那就让我们开始md之旅吧！。</p>
 <span id="more"></span>
 
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a><a name="Name">标题</a></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 一级标题</span></span><br><span class="line"><span class="comment">## 二级标题</span></span><br><span class="line"><span class="comment">### 三级标题</span></span><br></pre></td></tr></table></figure>
