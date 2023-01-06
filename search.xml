@@ -167,6 +167,58 @@
       </tags>
   </entry>
   <entry>
+    <title>Java数组</title>
+    <url>/2022/06/20/Java%E6%95%B0%E7%BB%84/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>基础不牢，地动山摇。之前一直没有基础地过一遍Java，写代码也都是不懂了再去网上找资料，这样效率实在太低了。所以呢，还是自己每次记录一点，以后找也方便，也方便记忆^_^</p>
+<span id="more"></span>
+<h2 id="声明数组变量"><a href="#声明数组变量" class="headerlink" title="声明数组变量"></a>声明数组变量</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList;	<span class="comment">//首选的方法</span></span><br><span class="line">或</span><br><span class="line"><span class="type">int</span> myList[];	<span class="comment">//效果相同，不是首选的方法</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
+
+<p>上面语法做了两件事情</p>
+<ul>
+<li>一、使用int[8]创建了一个数组</li>
+<li>二、把新创建的数组引用赋值给变量myList</li>
+</ul>
+<h2 id="声明和创建一气呵成"><a href="#声明和创建一气呵成" class="headerlink" title="声明和创建一气呵成"></a>声明和创建一气呵成</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">9</span>];</span><br><span class="line">或</span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="For-Each-循环"><a href="#For-Each-循环" class="headerlink" title="For-Each 循环"></a>For-Each 循环</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i:myList)&#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数组作为函数参数"><a href="#数组作为函数参数" class="headerlink" title="数组作为函数参数"></a>数组作为函数参数</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span>[] array)</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    System.out.print(array[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">printArray(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="多维数组的动态初始化"><a href="#多维数组的动态初始化" class="headerlink" title="多维数组的动态初始化"></a>多维数组的动态初始化</h2><h3 id="一步到位"><a href="#一步到位" class="headerlink" title="一步到位"></a>一步到位</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[][] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>][<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+
+<h3 id="分别分配"><a href="#分别分配" class="headerlink" title="分别分配"></a>分别分配</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[][] s = <span class="keyword">new</span> [<span class="number">2</span>][];</span><br><span class="line">s[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">2</span>];</span><br><span class="line">s[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">3</span>];</span><br><span class="line">s[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Good&quot;</span>);</span><br><span class="line">s[<span class="number">0</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Luck&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;to&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;you&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">2</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解析:</strong></p>
+<p><strong>s[0]&#x3D;new String[2]</strong> 和 <strong>s[1]&#x3D;new String[3]</strong> 是为最高维分配引用空间，也就是为最高维限制其能保存数据的最长的长度，然后再为其每个数组元素单独分配空间 <strong>s0&#x3D;new String(“Good”)</strong> 等操作</p>
+<h2 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h2><p><strong>java.util.Arrays</strong>提供了方便操作数组的方法</p>
+<h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 填充函数</span></span><br><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">Arrays.fill(myList,<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">	System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5 5 5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">Arrays.sort(myList);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">    System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2 3 4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] _myList = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">if</span>(Arrays.equals(myList,_myList))&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Y&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Y</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="binarySearch"><a href="#binarySearch" class="headerlink" title="binarySearch"></a>binarySearch</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二分查找只适用于排好序的数组</span></span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line">System.out.println(Arrays.binarySearch(myList,<span class="number">6</span>));</span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>数组</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown常用语法</title>
     <url>/2022/06/18/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>偶的第一篇博客就从markdown语法开始吧，主要参考的是<a href="https://www.runoob.com/markdown/md-tutorial.html">菜鸟教程</a>。从中摘录了可能最常用的语法，并结合其他资源整合而成，那就让我们开始md之旅吧！。</p>
@@ -274,58 +326,6 @@
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java数组</title>
-    <url>/2022/06/20/Java%E6%95%B0%E7%BB%84/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>基础不牢，地动山摇。之前一直没有基础地过一遍Java，写代码也都是不懂了再去网上找资料，这样效率实在太低了。所以呢，还是自己每次记录一点，以后找也方便，也方便记忆^_^</p>
-<span id="more"></span>
-<h2 id="声明数组变量"><a href="#声明数组变量" class="headerlink" title="声明数组变量"></a>声明数组变量</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList;	<span class="comment">//首选的方法</span></span><br><span class="line">或</span><br><span class="line"><span class="type">int</span> myList[];	<span class="comment">//效果相同，不是首选的方法</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">8</span>];</span><br></pre></td></tr></table></figure>
-
-<p>上面语法做了两件事情</p>
-<ul>
-<li>一、使用int[8]创建了一个数组</li>
-<li>二、把新创建的数组引用赋值给变量myList</li>
-</ul>
-<h2 id="声明和创建一气呵成"><a href="#声明和创建一气呵成" class="headerlink" title="声明和创建一气呵成"></a>声明和创建一气呵成</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">9</span>];</span><br><span class="line">或</span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="For-Each-循环"><a href="#For-Each-循环" class="headerlink" title="For-Each 循环"></a>For-Each 循环</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> i:myList)&#123;</span><br><span class="line">    System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="数组作为函数参数"><a href="#数组作为函数参数" class="headerlink" title="数组作为函数参数"></a>数组作为函数参数</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">printArray</span><span class="params">(<span class="type">int</span>[] array)</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">    System.out.print(array[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">printArray(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">4</span>, <span class="number">2</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="多维数组的动态初始化"><a href="#多维数组的动态初始化" class="headerlink" title="多维数组的动态初始化"></a>多维数组的动态初始化</h2><h3 id="一步到位"><a href="#一步到位" class="headerlink" title="一步到位"></a>一步到位</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[][] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>][<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
-
-<h3 id="分别分配"><a href="#分别分配" class="headerlink" title="分别分配"></a>分别分配</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String[][] s = <span class="keyword">new</span> [<span class="number">2</span>][];</span><br><span class="line">s[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">2</span>];</span><br><span class="line">s[<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">3</span>];</span><br><span class="line">s[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Good&quot;</span>);</span><br><span class="line">s[<span class="number">0</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;Luck&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;to&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">1</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;you&quot;</span>);</span><br><span class="line">s[<span class="number">1</span>][<span class="number">2</span>] = <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;!&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<p><strong>解析:</strong></p>
-<p><strong>s[0]&#x3D;new String[2]</strong> 和 <strong>s[1]&#x3D;new String[3]</strong> 是为最高维分配引用空间，也就是为最高维限制其能保存数据的最长的长度，然后再为其每个数组元素单独分配空间 <strong>s0&#x3D;new String(“Good”)</strong> 等操作</p>
-<h2 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h2><p><strong>java.util.Arrays</strong>提供了方便操作数组的方法</p>
-<h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 填充函数</span></span><br><span class="line"><span class="type">int</span>[] myList = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>];</span><br><span class="line">Arrays.fill(myList,<span class="number">5</span>);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">	System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 5 5 5</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">Arrays.sort(myList);</span><br><span class="line"><span class="keyword">for</span>( <span class="type">int</span> item : myList)&#123;</span><br><span class="line">    System.out.print(item+<span class="string">&quot; &quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2 3 4</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line"><span class="type">int</span>[] _myList = &#123;<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>&#125;;</span><br><span class="line"><span class="keyword">if</span>(Arrays.equals(myList,_myList))&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Y&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Y</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="binarySearch"><a href="#binarySearch" class="headerlink" title="binarySearch"></a>binarySearch</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 二分查找只适用于排好序的数组</span></span><br><span class="line"><span class="type">int</span>[] myList = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">7</span>&#125;;</span><br><span class="line">System.out.println(Arrays.binarySearch(myList,<span class="number">6</span>));</span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>数组</tag>
       </tags>
   </entry>
   <entry>
@@ -560,6 +560,29 @@
       </tags>
   </entry>
   <entry>
+    <title>只读存储器ROM</title>
+    <url>/2022/09/12/%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8ROM/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C2022-09-12-18-51-24-image.png"></p>
+<span id="more"></span>
+
+<p><code>主存=BIOS+主存</code></p>
+<p><code>闪存的写速度一般比读速度慢，因为写入前要先擦除</code></p>
+<p><code>RAM芯片是易失的，ROM芯片是非易失的。很多ROM也具有”随机存取“的特性</code></p>
+<p><img src="/%5Cimages%5C2022-09-12-18-54-11-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-12-18-54-22-image.png"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第三章 存储系统</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第三章 存储系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>各个硬件的工作原理</title>
     <url>/2022/09/08/%E5%90%84%E4%B8%AA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="主存储器的基本组成"><a href="#主存储器的基本组成" class="headerlink" title="主存储器的基本组成"></a>主存储器的基本组成</h2><p>主存储器</p>
@@ -626,29 +649,6 @@
       </tags>
   </entry>
   <entry>
-    <title>只读存储器ROM</title>
-    <url>/2022/09/12/%E5%8F%AA%E8%AF%BB%E5%AD%98%E5%82%A8%E5%99%A8ROM/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C2022-09-12-18-51-24-image.png"></p>
-<span id="more"></span>
-
-<p><code>主存=BIOS+主存</code></p>
-<p><code>闪存的写速度一般比读速度慢，因为写入前要先擦除</code></p>
-<p><code>RAM芯片是易失的，ROM芯片是非易失的。很多ROM也具有”随机存取“的特性</code></p>
-<p><img src="/%5Cimages%5C2022-09-12-18-54-11-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-12-18-54-22-image.png"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第三章 存储系统</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第三章 存储系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>固态硬盘</title>
     <url>/2022/09/15/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h3><p><img src="/%5Cimages%5C2022-09-15-14-56-53-image.png"></p>
@@ -692,19 +692,14 @@
       </tags>
   </entry>
   <entry>
-    <title>定点数的移位运算</title>
-    <url>/2022/09/09/%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码的算数移位"><a href="#原码的算数移位" class="headerlink" title="原码的算数移位"></a>原码的算数移位</h3><p>符号位保持不变，仅对数值位进行移位</p>
-<p>右移：高位补0，低位舍弃。如舍弃的位&#x3D;0，相当于&#x2F;2；如舍弃位&#x3D;1，这会丢失精度。</p>
-<p>左移：低位补0，高位舍弃。若舍弃的位&#x3D;0，相当于&#x2F;2；若舍弃位&#x3D;1，严重误差。</p>
+    <title>定点小数</title>
+    <url>/2022/09/08/%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B0.jpg"></p>
 <span id="more"></span>
 
-<h3 id="反码的算数移位"><a href="#反码的算数移位" class="headerlink" title="反码的算数移位"></a>反码的算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D1.jpg"></p>
-<h3 id="补码的算数移位"><a href="#补码的算数移位" class="headerlink" title="补码的算数移位"></a>补码的算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D2.jpg"></p>
-<h3 id="算数移位"><a href="#算数移位" class="headerlink" title="算数移位"></a>算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D3.jpg"></p>
-<h3 id="逻辑移位"><a href="#逻辑移位" class="headerlink" title="逻辑移位"></a>逻辑移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D4.jpg"></p>
-<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D5.jpg"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D6.jpg"></p>
+<p>定点小数的原码反码补码转换和定点整数一模一样</p>
+<p>对于定点小数加减法时，先转换成补码。然后运算规则和定点小数一样。</p>
+<p><img src="/%5Cimages%5C%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B02.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -718,14 +713,19 @@
       </tags>
   </entry>
   <entry>
-    <title>定点小数</title>
-    <url>/2022/09/08/%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B0.jpg"></p>
+    <title>定点数的移位运算</title>
+    <url>/2022/09/09/%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码的算数移位"><a href="#原码的算数移位" class="headerlink" title="原码的算数移位"></a>原码的算数移位</h3><p>符号位保持不变，仅对数值位进行移位</p>
+<p>右移：高位补0，低位舍弃。如舍弃的位&#x3D;0，相当于&#x2F;2；如舍弃位&#x3D;1，这会丢失精度。</p>
+<p>左移：低位补0，高位舍弃。若舍弃的位&#x3D;0，相当于&#x2F;2；若舍弃位&#x3D;1，严重误差。</p>
 <span id="more"></span>
 
-<p>定点小数的原码反码补码转换和定点整数一模一样</p>
-<p>对于定点小数加减法时，先转换成补码。然后运算规则和定点小数一样。</p>
-<p><img src="/%5Cimages%5C%E5%AE%9A%E7%82%B9%E5%B0%8F%E6%95%B02.jpg"></p>
+<h3 id="反码的算数移位"><a href="#反码的算数移位" class="headerlink" title="反码的算数移位"></a>反码的算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D1.jpg"></p>
+<h3 id="补码的算数移位"><a href="#补码的算数移位" class="headerlink" title="补码的算数移位"></a>补码的算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D2.jpg"></p>
+<h3 id="算数移位"><a href="#算数移位" class="headerlink" title="算数移位"></a>算数移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D3.jpg"></p>
+<h3 id="逻辑移位"><a href="#逻辑移位" class="headerlink" title="逻辑移位"></a>逻辑移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D4.jpg"></p>
+<h3 id="循环移位"><a href="#循环移位" class="headerlink" title="循环移位"></a>循环移位</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D5.jpg"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><img src="/%5Cimages%5C%E7%A7%BB%E4%BD%8D6.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -806,26 +806,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据的存储和排列</title>
-    <url>/2022/09/10/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="大小端模式"><a href="#大小端模式" class="headerlink" title="大小端模式"></a>大小端模式</h3><p><img src="/images%5C%E5%A4%A7%E5%B0%8F%E7%AB%AF.jpg"></p>
-<span id="more"></span>
-
-<h3 id="边界对齐"><a href="#边界对齐" class="headerlink" title="边界对齐"></a>边界对齐</h3><p><code>假设结构体存了三个char型，三个short型和一个int型</code></p>
-<p><img src="/%5Cimages%5C%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>指令格式</title>
     <url>/2022/09/15/%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="指令的定义"><a href="#指令的定义" class="headerlink" title="指令的定义"></a>指令的定义</h2><p><img src="/%5Cimages%5C2022-09-15-16-41-45-image.png"></p>
@@ -849,6 +829,26 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第四章 指令系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据的存储和排列</title>
+    <url>/2022/09/10/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="大小端模式"><a href="#大小端模式" class="headerlink" title="大小端模式"></a>大小端模式</h3><p><img src="/images%5C%E5%A4%A7%E5%B0%8F%E7%AB%AF.jpg"></p>
+<span id="more"></span>
+
+<h3 id="边界对齐"><a href="#边界对齐" class="headerlink" title="边界对齐"></a>边界对齐</h3><p><code>假设结构体存了三个char型，三个short型和一个int型</code></p>
+<p><img src="/%5Cimages%5C%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
       </tags>
   </entry>
   <entry>
@@ -954,6 +954,25 @@
       </tags>
   </entry>
   <entry>
+    <title>浮点数的运算</title>
+    <url>/2022/09/11/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="十进制的浮点数运算"><a href="#十进制的浮点数运算" class="headerlink" title="十进制的浮点数运算"></a>十进制的浮点数运算</h3><p><img src="/%5Cimages%5C2022-09-12-16-41-58-image.png"></p>
+<h3 id="二进制的浮点数加减"><a href="#二进制的浮点数加减" class="headerlink" title="二进制的浮点数加减"></a>二进制的浮点数加减</h3><p><img src="/%5Cimages%5C2022-09-12-16-45-01-image.png"></p>
+<h3 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h3><p><img src="/%5Cimages%5C2022-09-12-16-50-22-image.png"></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><img src="/%5Cimages%5C2022-09-12-16-51-38-image.png"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电路的基本原理、加法器设计</title>
     <url>/2022/09/08/%E7%94%B5%E8%B7%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E3%80%81%E5%8A%A0%E6%B3%95%E5%99%A8%E8%AE%BE%E8%AE%A1/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E7%94%B5%E8%B7%AF1.jpg"></p>
@@ -974,25 +993,6 @@
 <h3 id="一位全加器"><a href="#一位全加器" class="headerlink" title="一位全加器"></a>一位全加器</h3><p><img src="/%5Cimages%5C%E7%94%B5%E8%B7%AF2.jpg"></p>
 <h3 id="串位加法器"><a href="#串位加法器" class="headerlink" title="串位加法器"></a>串位加法器</h3><p><img src="/%5Cimages%5C%E7%94%B5%E8%B7%AF3.jpg"></p>
 <h3 id="并行加法器"><a href="#并行加法器" class="headerlink" title="并行加法器"></a>并行加法器</h3><p><img src="/%5Cimages%5C%E7%94%B5%E8%B7%AF4.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浮点数的运算</title>
-    <url>/2022/09/11/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="十进制的浮点数运算"><a href="#十进制的浮点数运算" class="headerlink" title="十进制的浮点数运算"></a>十进制的浮点数运算</h3><p><img src="/%5Cimages%5C2022-09-12-16-41-58-image.png"></p>
-<h3 id="二进制的浮点数加减"><a href="#二进制的浮点数加减" class="headerlink" title="二进制的浮点数加减"></a>二进制的浮点数加减</h3><p><img src="/%5Cimages%5C2022-09-12-16-45-01-image.png"></p>
-<h3 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h3><p><img src="/%5Cimages%5C2022-09-12-16-50-22-image.png"></p>
-<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><img src="/%5Cimages%5C2022-09-12-16-51-38-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1102,12 +1102,13 @@
       </tags>
   </entry>
   <entry>
-    <title>补码除法</title>
-    <url>/2022/09/10/%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95.jpg"></p>
+    <title>补码的乘法运算</title>
+    <url>/2022/09/09/%E8%A1%A5%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
 <span id="more"></span>
 
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1121,13 +1122,12 @@
       </tags>
   </entry>
   <entry>
-    <title>补码的乘法运算</title>
-    <url>/2022/09/09/%E8%A1%A5%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
+    <title>补码除法</title>
+    <url>/2022/09/10/%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95.jpg"></p>
 <span id="more"></span>
 
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%952.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1262,6 +1262,30 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机系统的结构层次</title>
+    <url>/2022/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算机系统从程序员的角度可以分为5层</p>
+<span id="more"></span>
+
+<p><img src="/%5Cimages%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpg"></p>
+<p>编译程序：全部语句一次性翻译，而后执行。后续不再翻译</p>
+<p>解释程序：逐句翻译，逐句执行。后续还要翻译。</p>
+<p>编译、汇编、解释程序可统称为”翻译程序“</p>
+<p><b>计算机体系结构：如何设计硬件与软件之间的接口。例：有无乘法指令</b></p>
+<p><b>计算机组成原理： 如何用硬件实现所对应的接口。 例：如何实现乘法指令</b></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第一章 计算机系统概述</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第一章 计算机系统概述</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>进位计数制</title>
     <url>/2022/09/08/%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>十进制、二进制、八进制、十六进制</p>
@@ -1292,30 +1316,6 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机系统的结构层次</title>
-    <url>/2022/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算机系统从程序员的角度可以分为5层</p>
-<span id="more"></span>
-
-<p><img src="/%5Cimages%5C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.jpg"></p>
-<p>编译程序：全部语句一次性翻译，而后执行。后续不再翻译</p>
-<p>解释程序：逐句翻译，逐句执行。后续还要翻译。</p>
-<p>编译、汇编、解释程序可统称为”翻译程序“</p>
-<p><b>计算机体系结构：如何设计硬件与软件之间的接口。例：有无乘法指令</b></p>
-<p><b>计算机组成原理： 如何用硬件实现所对应的接口。 例：如何实现乘法指令</b></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第一章 计算机系统概述</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第一章 计算机系统概述</tag>
       </tags>
   </entry>
   <entry>
