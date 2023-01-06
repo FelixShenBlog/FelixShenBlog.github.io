@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo常用命令</title>
-    <url>/2022/09/07/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="1-hexo-g-或-hexo-generate"><a href="#1-hexo-g-或-hexo-generate" class="headerlink" title="(1) hexo g 或 hexo generate"></a>(1) hexo g 或 hexo generate</h3><p>该命令执行后在hexo站点根目录生成&lt;b文件夹</p>
-<h3 id="2-hexo-clean"><a href="#2-hexo-clean" class="headerlink" title="(2) hexo clean"></a>(2) hexo clean</h3><p>该命令执行后讲<code>public</code>文件夹删除</p>
-<h3 id="3-hexo-s-或-hexo-server"><a href="#3-hexo-s-或-hexo-server" class="headerlink" title="(3) hexo s 或 hexo server"></a>(3) hexo s 或 hexo server</h3><p>启动服务，默认地址为<a href="http://localhost:4000/%EF%BC%8C4000%E7%AB%AF%E5%8F%A3">http://localhost:4000/，4000端口</a></p>
-<h3 id="4-hexo-d-或-hexo-deploy"><a href="#4-hexo-d-或-hexo-deploy" class="headerlink" title="(4) hexo d 或 hexo deploy"></a>(4) hexo d 或 hexo deploy</h3><p>部署站点，在本地生成<code>.deploy_git</code>文件夹，并将编译后的文件上传至 GitHub。</p>
-<h3 id="5-hexo-new-layout"><a href="#5-hexo-new-layout" class="headerlink" title="(5) hexo new [layout] "></a>(5) hexo new [layout] <title></h3><p>例如： <code>hexo new photo “my-first-blog”</code></p>
-<p>上述指令执行时，Hexo 会尝试在 scaffolds 中寻找photo.md布局，若找到，则根据该布局新建文章；若未找到或指令中未指定该参数，则使用post.md新建文章。新建文章的名称在_config.yml中配置。</p>
-<h3 id="6-删除文章"><a href="#6-删除文章" class="headerlink" title="(6) 删除文章"></a>(6) 删除文章</h3><p>只需在本地把<code>source/_posts</code>文件夹下的文章源文件删除后，执行以下命令重新部署即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s     // 一定要先 clean，防止灵异事件发生</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java数组</title>
     <url>/2022/06/20/Java%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>基础不牢，地动山摇。之前一直没有基础地过一遍Java，写代码也都是不懂了再去网上找资料，这样效率实在太低了。所以呢，还是自己每次记录一点，以后找也方便，也方便记忆^_^</p>
@@ -179,6 +163,36 @@
       </tags>
   </entry>
   <entry>
+    <title>两数相加</title>
+    <url>/2022/06/20/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
+<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
+<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头</p>
+<span id="more"></span>
+
+<p><a href="https://leetcode.cn/problems/add-two-numbers/">题目链接</a></p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>一定要看好题目，一开始我没看到逆序存储。结果兜了一大圈，才发现了错误，整个人都不好了。题目的算法很简单，就是模拟竖式计算，不过实现起来却真的很考验基本功，直接看标准答案吧：</p>
+<h3 id="标准答案"><a href="#标准答案" class="headerlink" title="标准答案"></a>标准答案</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);<span class="comment">// 如果对象为null，next属性就没有了意义，所以一般要有一个初始的节点</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> pre;</span><br><span class="line">        <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">null</span> || l2 != <span class="literal">null</span>) &#123;<span class="comment">// 一开始想到有序链表的合并了,想用“&amp;&amp;”解决问题，真不好用。还是“||”方便啊。</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> l1 == <span class="literal">null</span> ? <span class="number">0</span> : l1.val;<span class="comment">// 很妙啊</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> l2 == <span class="literal">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> x + y + carry;</span><br><span class="line">            </span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum = sum % <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line"></span><br><span class="line">            cur = cur.next;</span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">null</span>)</span><br><span class="line">                l1 = l1.next; </span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">null</span>)</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry == <span class="number">1</span>) &#123;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>灵感来源与有序链表合并的代码:对比一下，标准答案简洁了好多啊！</p>
+<h3 id="原创答案"><a href="#原创答案" class="headerlink" title="原创答案"></a>原创答案</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> pre;</span><br><span class="line">        <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">null</span> &amp;&amp; l2 != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l1.val + l2.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l1!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l1.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l2!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l2.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry==<span class="number">1</span>)&#123;</span><br><span class="line">            cur.next=<span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="链表逆转"><a href="#链表逆转" class="headerlink" title="链表逆转"></a>链表逆转</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">reverse</span><span class="params">(ListNode l)</span>&#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">//前一个节点</span></span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> l;</span><br><span class="line">    ListNode next ; <span class="comment">//后一个节点</span></span><br><span class="line">    <span class="keyword">while</span>(cur!=<span class="literal">null</span>)&#123;</span><br><span class="line">        next = cur.next; <span class="comment">//保存后一个节点地址</span></span><br><span class="line">        cur.next = pre; <span class="comment">// 逆转</span></span><br><span class="line">        pre = cur;</span><br><span class="line">        cur=next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Java</category>
+        <category>LeetCode100</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>LeetCode100</tag>
+        <tag>链表</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>两数之和</title>
     <url>/2022/06/20/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
@@ -216,36 +230,6 @@
       </tags>
   </entry>
   <entry>
-    <title>两数相加</title>
-    <url>/2022/06/20/%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
-<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
-<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头</p>
-<span id="more"></span>
-
-<p><a href="https://leetcode.cn/problems/add-two-numbers/">题目链接</a></p>
-<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>一定要看好题目，一开始我没看到逆序存储。结果兜了一大圈，才发现了错误，整个人都不好了。题目的算法很简单，就是模拟竖式计算，不过实现起来却真的很考验基本功，直接看标准答案吧：</p>
-<h3 id="标准答案"><a href="#标准答案" class="headerlink" title="标准答案"></a>标准答案</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);<span class="comment">// 如果对象为null，next属性就没有了意义，所以一般要有一个初始的节点</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> pre;</span><br><span class="line">        <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">null</span> || l2 != <span class="literal">null</span>) &#123;<span class="comment">// 一开始想到有序链表的合并了,想用“&amp;&amp;”解决问题，真不好用。还是“||”方便啊。</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> l1 == <span class="literal">null</span> ? <span class="number">0</span> : l1.val;<span class="comment">// 很妙啊</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> l2 == <span class="literal">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> x + y + carry;</span><br><span class="line">            </span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum = sum % <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line"></span><br><span class="line">            cur = cur.next;</span><br><span class="line">            <span class="keyword">if</span>(l1 != <span class="literal">null</span>)</span><br><span class="line">                l1 = l1.next; </span><br><span class="line">            <span class="keyword">if</span>(l2 != <span class="literal">null</span>)</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry == <span class="number">1</span>) &#123;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>灵感来源与有序链表合并的代码:对比一下，标准答案简洁了好多啊！</p>
-<h3 id="原创答案"><a href="#原创答案" class="headerlink" title="原创答案"></a>原创答案</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> ListNode <span class="title function_">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> pre;</span><br><span class="line">        <span class="type">int</span> <span class="variable">carry</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="literal">null</span> &amp;&amp; l2 != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l1.val + l2.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l1!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l1.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (l2!=<span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> l2.val+carry;</span><br><span class="line">            carry = sum / <span class="number">10</span>;</span><br><span class="line">            sum %= <span class="number">10</span>;</span><br><span class="line">            cur.next = <span class="keyword">new</span> <span class="title class_">ListNode</span>(sum);</span><br><span class="line">            cur = cur.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry==<span class="number">1</span>)&#123;</span><br><span class="line">            cur.next=<span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="链表逆转"><a href="#链表逆转" class="headerlink" title="链表逆转"></a>链表逆转</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">reverse</span><span class="params">(ListNode l)</span>&#123;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="literal">null</span>; <span class="comment">//前一个节点</span></span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">cur</span> <span class="operator">=</span> l;</span><br><span class="line">    ListNode next ; <span class="comment">//后一个节点</span></span><br><span class="line">    <span class="keyword">while</span>(cur!=<span class="literal">null</span>)&#123;</span><br><span class="line">        next = cur.next; <span class="comment">//保存后一个节点地址</span></span><br><span class="line">        cur.next = pre; <span class="comment">// 逆转</span></span><br><span class="line">        pre = cur;</span><br><span class="line">        cur=next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Java</category>
-        <category>LeetCode100</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>LeetCode100</tag>
-        <tag>链表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>无重复的最长字串</title>
     <url>/2022/06/20/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
@@ -276,6 +260,106 @@
         <tag>LeetCode100</tag>
         <tag>滑动窗口</tag>
         <tag>哈希集合</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo常用命令</title>
+    <url>/2022/09/07/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="hexo-g-或-hexo-generate"><a href="#hexo-g-或-hexo-generate" class="headerlink" title="hexo g 或 hexo generate"></a>hexo g 或 hexo generate</h3><p>该命令执行后在hexo站点根目录生成<code>public</code>文件夹</p>
+<span id="more"></span>
+
+<h3 id="hexo-clean"><a href="#hexo-clean" class="headerlink" title="hexo clean"></a>hexo clean</h3><p>该命令执行后讲<code>public</code>文件夹删除</p>
+<h3 id="hexo-s-或-hexo-server"><a href="#hexo-s-或-hexo-server" class="headerlink" title="hexo s 或 hexo server"></a>hexo s 或 hexo server</h3><p>启动服务，默认地址为<code>http://localhost:4000/</code></p>
+<h3 id="hexo-d-或-hexo-deploy"><a href="#hexo-d-或-hexo-deploy" class="headerlink" title="hexo d 或 hexo deploy"></a>hexo d 或 hexo deploy</h3><p>部署站点，在本地生成<code>.deploy_git</code>文件夹，并将编译后的文件上传至 GitHub。</p>
+<h3 id="hexo-new-photo-test"><a href="#hexo-new-photo-test" class="headerlink" title="hexo new photo test"></a>hexo new photo test</h3><p>上述指令执行时，Hexo 会尝试在 scaffolds 中寻找photo.md布局，若找到，则根据该布局新建文章；若未找到或指令中未指定该参数，则使用post.md新建文章。新建文章的名称在_config.yml中配置。</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机的发展</title>
+    <url>/2022/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8F%91%E5%B1%95/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="什么是计算机系统"><a href="#什么是计算机系统" class="headerlink" title="什么是计算机系统"></a>什么是计算机系统</h2><p>计算机系统&#x3D;硬件+软件</p>
+<p>软件</p>
+<ul>
+<li><p>系统软件 用来管理整个计算机系统</p>
+</li>
+<li><p>应用软件 按任务需要编制成的各种程序</p>
+</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h2 id="硬件的发展"><a href="#硬件的发展" class="headerlink" title="硬件的发展"></a>硬件的发展</h2><p>第一代 电子管 机器语言</p>
+<p>第二代 晶体管 面向过程的程序设计语言FORTRAN</p>
+<p>第三代 中小规模集成电路 高级语言</p>
+<p>第四代 大规模、超大规模集成电路</p>
+<h2 id="软件的发展"><a href="#软件的发展" class="headerlink" title="软件的发展"></a>软件的发展</h2><p>机器语言汇编语言-&gt;高级语言</p>
+<p>DOS-&gt;Windows,MacOS</p>
+<h2 id="目前的发展趋势"><a href="#目前的发展趋势" class="headerlink" title="目前的发展趋势"></a>目前的发展趋势</h2><p> 微型计算机向更微型化、网络化、高性能、多用途方向发展</p>
+<p>巨型机向更巨型化、超高速、并行处理、智能化发展</p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第一章 计算机系统概述</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第一章 计算机系统概述</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机硬件的基本组成</title>
+    <url>/2022/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="早期冯诺依曼的结构"><a href="#早期冯诺依曼的结构" class="headerlink" title="早期冯诺依曼的结构"></a>早期冯诺依曼的结构</h2><p>存储程序概念的提出</p>
+<p>第一台冯机 EDVAC</p>
+<p>冯诺伊曼机结构</p>
+<ul>
+<li><p>输入设备 信息转换</p>
+</li>
+<li><p>输出设备 信息转换</p>
+</li>
+<li><p>存储器</p>
+</li>
+<li><p>运算器</p>
+</li>
+<li><p>控制器</p>
+</li>
+</ul>
+<p>冯诺依曼机特点</p>
+<ol>
+<li><p>五大部件</p>
+</li>
+<li><p>指令和计算机以同等地位存于存储器，可按地址寻访</p>
+</li>
+<li><p>指令和数据用二进制表示</p>
+</li>
+<li><p>指令由操作码和地址码组成</p>
+</li>
+<li><p>存储程序</p>
+</li>
+<li><p>以运算器为核心</p>
+</li>
+</ol>
+<h2 id="现代计算机的结构"><a href="#现代计算机的结构" class="headerlink" title="现代计算机的结构"></a>现代计算机的结构</h2><p>现代计算机：<code>以存储器为核心</code></p>
+<p><code>CPU=运算器+控制器</code></p>
+<p>主存: 运算速度快，容量小，价格高</p>
+<p>辅存：运算速度慢，容量大，价格低</p>
+<p><img src="C:\Blog\public\images\硬件逻辑图.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第一章 计算机系统概述</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第一章 计算机系统概述</tag>
       </tags>
   </entry>
 </search>
