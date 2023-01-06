@@ -491,6 +491,27 @@
       </tags>
   </entry>
   <entry>
+    <title>原码的乘法运算</title>
+    <url>/2022/09/09/%E5%8E%9F%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%954.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%956.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%957.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>原码除法</title>
     <url>/2022/09/09/%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="恢复余数法"><a href="#恢复余数法" class="headerlink" title="恢复余数法"></a>恢复余数法</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%951.jpg"></p>
@@ -505,27 +526,6 @@
 <p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%958.jpg"></p>
 <p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E9%99%A4%E6%B3%959.jpg"></p>
 <p><code>注意：若最后一步得到的余数为负，需商0，并恢复余数</code></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>原码的乘法运算</title>
-    <url>/2022/09/09/%E5%8E%9F%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%954.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%956.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%957.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -739,25 +739,6 @@
       </tags>
   </entry>
   <entry>
-    <title>并行进位加法器</title>
-    <url>/2022/09/09/%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="如何更快的产生进位"><a href="#如何更快的产生进位" class="headerlink" title="如何更快的产生进位"></a>如何更快的产生进位</h3><p><img src="/%5Cimages%5C%E5%B9%B6%E8%A1%8C1.jpg"></p>
-<span id="more"></span>
-
-<h3 id="并行加法器的优化"><a href="#并行加法器的优化" class="headerlink" title="并行加法器的优化"></a>并行加法器的优化</h3><p><img src="/%5Cimages%5C%E5%B9%B6%E8%A1%8C2.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>带符号整数的表示和运算</title>
     <url>/2022/09/08/%E5%B8%A6%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码表示"><a href="#原码表示" class="headerlink" title="原码表示"></a>原码表示</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E8%A1%A8%E7%A4%BA.jpg"></p>
@@ -784,6 +765,25 @@
       </tags>
   </entry>
   <entry>
+    <title>并行进位加法器</title>
+    <url>/2022/09/09/%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="如何更快的产生进位"><a href="#如何更快的产生进位" class="headerlink" title="如何更快的产生进位"></a>如何更快的产生进位</h3><p><img src="/%5Cimages%5C%E5%B9%B6%E8%A1%8C1.jpg"></p>
+<span id="more"></span>
+
+<h3 id="并行加法器的优化"><a href="#并行加法器的优化" class="headerlink" title="并行加法器的优化"></a>并行加法器的优化</h3><p><img src="/%5Cimages%5C%E5%B9%B6%E8%A1%8C2.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>拓展操作码指令格式</title>
     <url>/2022/09/15/%E6%8B%93%E5%B1%95%E6%93%8D%E4%BD%9C%E7%A0%81%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p><img src="C:\Blog\source\images\2022-09-15-17-00-56-image.png"></p>
@@ -794,6 +794,8 @@
 <p><img src="/%5Cimages%5C2022-09-15-17-04-13-image.png"></p>
 <p><img src="/%5Cimages%5C2022-09-15-17-04-46-image.png"></p>
 <img title="" src="file:///C:/Blog/source/images/运算器.jpg" alt="">
+
+<p>sfsfs</p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -878,6 +880,29 @@
       </tags>
   </entry>
   <entry>
+    <title>标志位的生成</title>
+    <url>/2022/09/09/%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>OF(Overflow Flag): <code>OF位对无符号数的加减法无意义</code></p>
+<p>SF(Sign Flag): <code>SF位对无符号数的加减法无意义</code></p>
+<p>ZF(Zero Flag): <code>对无符号数和有符号数都有意义</code></p>
+<p>CF(Carry Flag):<code>对有符号数的加减法无意义</code></p>
+<span id="more"></span>
+
+<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%971.jpg"></p>
+<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%972.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无重复的最长字串</title>
     <url>/2022/06/20/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
@@ -908,29 +933,6 @@
         <tag>LeetCode100</tag>
         <tag>滑动窗口</tag>
         <tag>哈希集合</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标志位的生成</title>
-    <url>/2022/09/09/%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E7%94%9F%E6%88%90/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>OF(Overflow Flag): <code>OF位对无符号数的加减法无意义</code></p>
-<p>SF(Sign Flag): <code>SF位对无符号数的加减法无意义</code></p>
-<p>ZF(Zero Flag): <code>对无符号数和有符号数都有意义</code></p>
-<p>CF(Carry Flag):<code>对有符号数的加减法无意义</code></p>
-<span id="more"></span>
-
-<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%971.jpg"></p>
-<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%972.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
       </tags>
   </entry>
   <entry>
