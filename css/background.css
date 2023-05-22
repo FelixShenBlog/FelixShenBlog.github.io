@@ -1,0 +1,10 @@
+/* 页脚与头图透明 */
+
+#footer {
+  background: url("https://picsum.photos/1920/1080")
+}
+
+#page-header {
+  background: url("https://picsum.photos/1920/1080")
+}
+
