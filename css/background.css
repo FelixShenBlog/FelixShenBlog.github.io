@@ -1,4 +1,7 @@
 
+:root{
+  --lyx-theme:#49b1f5 /*我的主题色*/
+}
 /*使用以下下代码会去除蓝色加载面 */
 /* 页脚与头图透明 */
 #footer {
@@ -78,126 +81,7 @@ img {
 
 /* 黑夜霓虹灯 */
 
-/* 日间模式不生效 */
-[data-theme="light"] #site-name,
-[data-theme="light"] #site-title,
-[data-theme="light"] #site-subtitle,
-[data-theme="light"] #post-info {
-  animation: none;
-}
 
-/* 夜间模式生效 */
-[data-theme="dark"] #site-name,
-[data-theme="dark"] #site-title {
-  animation: light_15px 10s linear infinite;
-}
-[data-theme="dark"] #site-subtitle {
-  animation: light_10px 10s linear infinite;
-}
-[data-theme="dark"] #post-info {
-  animation: light_5px 10s linear infinite;
-}
-
-
-/* 关键帧描述 */
-@keyframes light_15px {
-  0% {
-    text-shadow: #5636ed 0 0 15px;
-  }
-  12.5% {
-    text-shadow: #11ee5e 0 0 15px;
-  }
-  25% {
-    text-shadow: #f14747 0 0 15px;
-  }
-  37.5% {
-    text-shadow: #f1a247 0 0 15px;
-  }
-  50% {
-    text-shadow: #f1ee47 0 0 15px;
-  }
-  50% {
-    text-shadow: #b347f1 0 0 15px;
-  }
-  62.5% {
-    text-shadow: #002afa 0 0 15px;
-  }
-  75% {
-    text-shadow: #ed709b 0 0 15px;
-  }
-  87.5% {
-    text-shadow: #39c5bb 0 0 15px;
-  }
-  100% {
-    text-shadow: #5636ed 0 0 15px;
-  }
-}
-
-@keyframes light_10px {
-  0% {
-    text-shadow: #5636ed 0 0 10px;
-  }
-  12.5% {
-    text-shadow: #11ee5e 0 0 10px;
-  }
-  25% {
-    text-shadow: #f14747 0 0 10px;
-  }
-  37.5% {
-    text-shadow: #f1a247 0 0 10px;
-  }
-  50% {
-    text-shadow: #f1ee47 0 0 10px;
-  }
-  50% {
-    text-shadow: #b347f1 0 0 10px;
-  }
-  62.5% {
-    text-shadow: #002afa 0 0 10px;
-  }
-  75% {
-    text-shadow: #ed709b 0 0 10px;
-  }
-  87.5% {
-    text-shadow: #39c5bb 0 0 10px;
-  }
-  100% {
-    text-shadow: #5636ed 0 0 10px;
-  }
-}
-
-@keyframes light_5px {
-  0% {
-    text-shadow: #5636ed 0 0 5px;
-  }
-  12.5% {
-    text-shadow: #11ee5e 0 0 5px;
-  }
-  25% {
-    text-shadow: #f14747 0 0 5px;
-  }
-  37.5% {
-    text-shadow: #f1a247 0 0 15px;
-  }
-  50% {
-    text-shadow: #f1ee47 0 0 5px;
-  }
-  50% {
-    text-shadow: #b347f1 0 0 5px;
-  }
-  62.5% {
-    text-shadow: #002afa 0 0 5px;
-  }
-  75% {
-    text-shadow: #ed709b 0 0 5px;
-  }
-  87.5% {
-    text-shadow: #39c5bb 0 0 5px;
-  }
-  100% {
-    text-shadow: #5636ed 0 0 5px;
-  }
-}
 
 
 /* 侧边栏个人信息卡片动态渐变色 */
@@ -278,6 +162,31 @@ div#runtime {
 [data-theme="dark"] div#runtime {
   color: #28b4c8;
   box-shadow: 0 0 5px rgba(28, 69, 218, 0.71);
+}
+
+/*导航栏居中*/
+#nav-right{
+  flex:1 1 auto;
+  justify-content: flex-end;
+  margin-left: auto;
+  display: flex;
+  flex-wrap:nowrap;
+}
+/*网站标题*/
+/*顶栏长驻*/
+.nav-fixed #nav{
+  transform: translateY(58px)!important;
+  -webkit-transform: translateY(58px)!important;
+  -moz-transform: translateY(58px)!important;
+  -ms-transform: translateY(58px)!important;
+  -o-transform: translateY(58px)!important;
+}
+#nav{
+  transition: none!important;
+  -webkit-transition: none!important;
+  -moz-transition: none!important;
+  -ms-transition: none!important;
+  -o-transition: none!important;
 }
 
 
