@@ -4,6 +4,79 @@
   
     
     <entry>
+      <title>单调栈</title>
+      <link href="/2023/05/27/%E5%8D%95%E8%B0%83%E6%A0%88/"/>
+      <url>/2023/05/27/%E5%8D%95%E8%B0%83%E6%A0%88/</url>
+      
+        <content type="html"><![CDATA[<h2 id="739-每日温度"><a href="#739-每日温度" class="headerlink" title="739.每日温度"></a>739.每日温度</h2><p><a href="https://leetcode.cn/problems/daily-temperatures/">题目链接</a></p><p>题意概括：找下一个比当前元素大的数</p><h3 id="关键点"><a href="#关键点" class="headerlink" title="关键点"></a>关键点</h3><ul><li><p>栈存的是下标</p></li><li><p>如果每次存的都是比栈顶小的元素，找的就是比当前元素大的数</p></li><li><p>如果每次存的都是比栈顶大的元素，找的就是比当前元素小的数</p></li><li><p>单调栈记录的是遍历过的元素，栈顶和当前元素对比，再进行求值的过程</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 单调栈 </tag>
+            
+            <tag> 数据结构与算法 </tag>
+            
+            <tag> 代码随想录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>面经</title>
+      <link href="/2023/05/27/%E9%9D%A2%E7%BB%8F/"/>
+      <url>/2023/05/27/%E9%9D%A2%E7%BB%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>              <p><strong>1.哈希冲突</strong></p><ul><li><p>定义：在哈希表中，不同的键经过哈希函数计算后得到相同的哈希值，导致它们应该存储在哈希表的同一个位置上</p></li><li><p>链地址法（Chaining）：使用链表或其他数据结构，在哈希表的每个位置上维护一个链表，将哈希冲突的元素存储在同一个位置的链表中。当需要查找、插入或删除元素时，遍历对应位置的链表即可。这种方法简单且易于实现，但可能会造成额外的存储空间开销和链表的遍历操作。</p></li><li><p>开放地址法（Open Addressing）：当发生哈希冲突时，通过一定的规则在哈希表的其他位置寻找空槽来存储冲突元素。常见的开放地址法有线性探测、二次探测、双重哈希等。这种方法不需要额外的数据结构存储冲突元素，节省了存储空间，但可能导致聚集现象，即连续的冲突元素会聚集在一起，影响性能。</p></li><li><p>建立更好的哈希函数：改进哈希函数的设计，减少哈希冲突的发生。好的哈希函数能够尽可能地将键均匀地分布在哈希表的各个位置上，减少冲突的概率。通常，好的哈希函数应该具有均匀性、雪崩效应（即输入的微小变化会导致输出的巨大变化）等特性。</p></li><li><p>调整哈希表的负载因子：负载因子是指哈希表中已存储元素的数量与哈希表大小的比值。当负载因子过高时，哈希冲突的概率会增加。通过动态调整哈希表的大小，可以控制负载因子在一个合理的范围内，减少哈希冲突的发生。</p></li></ul>              </div>            </details><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>              <p><strong>1.C++内存分布：</strong></p><ul><li><p>栈（stack）：栈是用于存储局部变量和函数调用信息的内存区域。它的分配和释放是由编译器自动完成的，遵循后进先出（LIFO）的原则。每当函数被调用时，函数的局部变量和参数被压入栈中，并在函数返回时被自动弹出。栈的大小通常是有限的，一般在编译时确定，超出栈大小的分配会导致栈溢出。</p></li><li><p>堆（heap）：堆是用于动态分配内存的区域。在堆上分配的内存需要手动进行管理，包括分配和释放。通常使用<code>new</code>操作符来分配内存，使用<code>delete</code>操作符来释放内存。堆上分配的内存在不需要时需要手动释放，否则可能导致内存泄漏。堆的大小一般比栈大，并且在运行时动态增长。</p></li><li><p>静态存储区（static storage area）：静态存储区用于存储全局变量、静态变量和静态常量。它在程序开始执行时被分配，并在程序结束时被释放。静态存储区的大小在编译时确定，存储区域在整个程序的执行期间都存在。</p></li><li><p>常量区（Constant Storage）：常量区用于存储常量数据，如字符串常量。这些数据在程序执行期间是只读的，无法修改。代码区（存储程序的机器指令）</p></li><li><p>程序代码区（Code Area）：程序代码区存储程序的指令代码。这部分内存是只读的，存储着程序的可执行指令。</p></li></ul><p><strong>2.什么是智能指针？为什么在C++中使用智能指针？</strong></p><p>智能指针是C++中的一种包装类，用于管理动态分配的对象的生命周期。它们提供了自动化的内存管理，可以避免内存泄漏和悬挂指针的问题。智能指针通过在对象上使用引用计数或其他技术来跟踪对象的引用，并在引用计数为零时自动释放对象的内存。</p><p><strong>3.C++中有哪些类型的智能指针？请简要描述它们的区别</strong></p><p>C++中有三种常用的智能指针类型：unique_ptr、shared_ptr和weak_ptr。</p><ul><li><p>unique_ptr：独占所有权的智能指针，不能共享所有权。它使用独占式所有权语义，确保只有一个指针可以访问所拥有的对象。</p></li><li><p>shared_ptr：允许多个指针共享同一个对象的智能指针。它使用引用计数来跟踪对象的引用，当引用计数为零时自动释放对象。</p></li><li><p>weak_ptr：用于解决shared_ptr可能引起的循环引用问题。weak_ptr可以观测shared_ptr，但不会增加引用计数，也不能直接访问所指向的对象。</p></li></ul><p><strong>3.如何创建和使用智能指针？</strong></p><p>可以使用<code>std::make_unique</code>、<code>std::make_shared</code>和<code>std::make_weak</code>等函数来创建智能指针。例如，使用<code>std::make_unique</code>创建unique_ptr。</p><p><strong>4.智能指针有什么缺点？</strong></p><p>答案：尽管智能指针提供了方便和安全的内存管理，但也存在一些缺点。其中一个主要的缺点是智能指针可能引起循环引用的问题，导致内存泄漏。为了避免这种情况，应该使用weak_ptr来打破循环引用。此外，智能指针相对于裸指针有一些额外的开销，包括引用计数的维护等。</p><p><a href="https://blog.csdn.net/qq_26538113/article/details/125796865">智能指针循环引用问题</a></p><p><strong>5.C++多态</strong></p><ul><li><p>什么是多态性（Polymorphism）：多态性是面向对象编程中的一个重要特性，它允许使用基类的指针或引用来访问派生类对象，实现代码的灵活性和可扩展性。</p></li><li><p>多态性的实现方式：两种主要的实现方式：静态多态性（静态绑定）和动态多态性（动态绑定）。静态多态性通过函数重载和模板实现，而动态多态性通过虚函数和继承实现。</p></li><li><p>虚函数和纯虚函数：虚函数是在基类中声明并使用<code>virtual</code>关键字修饰的函数，它可以在派生类中被重写，实现动态绑定。纯虚函数是在基类中声明并使用<code>virtual</code>关键字修饰的函数，但没有提供具体的实现，需要在派生类中实现。</p></li><li><p>虚函数表（Virtual Function Table）：虚函数表是一个特殊的数据结构，用于实现动态多态性。每个包含虚函数的类都有自己的虚函数表，该表存储了类的虚函数的地址，使得在运行时能够正确调用派生类的虚函数。</p></li><li><p>虚析构函数：虚析构函数的作用是确保在删除指向派生类对象的基类指针时，能够正确调用派生类的析构函数，防止内存泄漏。</p></li><li><p>多态性的优点和应用场景：多态性提供了代码的灵活性、可扩展性和可维护性。它使得代码可以更容易地适应变化和扩展，同时也提高了代码的可读性和重用性。</p></li><li><p>如何阻止派生类重写虚函数：可以在基类中使用<code>final</code>关键字来修饰虚函数，以阻止派生类对该虚函数进行重写。被标记为<code>final</code>的虚函数在派生类中不能被重写。</p></li></ul>              </div>            </details><h2 id="Qt"><a href="#Qt" class="headerlink" title="Qt"></a>Qt</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>                            </div>            </details><h2 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>              <p><strong>1.IO复用模型</strong></p><p>IO复用模型是一种用于实现高效的并发I/O操作的技术，它允许一个线程同时监视多个I/O事件，并在有事件发生时进行处理，避免了传统的阻塞式I/O中的线程阻塞和轮询等待。</p><p><strong>2.socket编程的流程</strong></p><ol><li><p>创建Socket：使用<code>socket()</code>系统调用创建一个Socket对象。需要指定网络协议、Socket类型和协议族。</p></li><li><p>绑定Socket：使用<code>bind()</code>系统调用将Socket绑定到一个特定的IP地址和端口号上。这一步是可选的，如果不绑定，操作系统会自动为Socket分配一个可用的端口。</p></li><li><p>监听连接请求（仅适用于服务器）：使用<code>listen()</code>系统调用将Socket设置为监听状态，以等待客户端的连接请求。服务器Socket需要指定可以同时处理的最大连接数。</p></li><li><p>接受连接（仅适用于服务器）：使用<code>accept()</code>系统调用接受客户端的连接请求，返回一个新的Socket对象用于与客户端进行通信。服务器Socket会一直阻塞，直到有客户端连接进来。</p></li><li><p>连接服务器（仅适用于客户端）：使用<code>connect()</code>系统调用连接到服务器的Socket。需要指定服务器的IP地址和端口号。</p></li><li><p>发送和接收数据：使用<code>send()</code>和<code>recv()</code>系统调用进行数据的发送和接收。可以根据具体需求进行数据的分割、组装和处理。</p></li><li><p>关闭连接：使用<code>close()</code>系统调用关闭Socket连接，释放相关资源。</p></li></ol><p><strong>3.TCP</strong></p><ul><li><p>TCP的基本概念：TCP是一种可靠的、面向连接的传输协议，它提供了可靠的数据传输、流量控制、拥塞控制和错误恢复机制等功能。</p></li><li><p>三次握手：包括客户端向服务器发送SYN（同步）请求，服务器回复SYN-ACK（同步-应答）确认，最后客户端发送ACK（应答）确认。</p></li><li><p>四次挥手：客户端或服务器发送FIN（结束）请求，对方回复ACK确认，然后再发送FIN请求，对方再次回复ACK确认</p></li></ul>              </div>            </details><h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>                            </div>            </details><h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>                            </div>            </details><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>              <p><strong>1.死锁的必要条件</strong></p><ul><li><p>互斥条件（Mutual Exclusion）</p></li><li><p>不可剥夺条件（No Preemption）</p></li><li><p>请求和保持条件（Hold and Wait)</p></li><li><p>循环等待条件（Circular Wait）</p></li></ul><p><strong>2.死锁的破坏</strong></p><ul><li><p>预防死锁（Deadlock Prevention）：</p><ul><li><p>互斥条件破坏：将某些资源设计为可共享的，多个进程可以同时访问。</p></li><li><p>请求与保持条件破坏：进程在申请资源时，要求一次性申请所需要的所有资源，而不是逐个申请。</p></li><li><p>不可剥夺条件破坏：允许操作系统在必要时剥夺进程已经占有的资源。</p></li><li><p>循环等待条件破坏：对系统中的资源进行全局排序，并规定进程按照序号递增的顺序申请资源。</p></li></ul></li><li><p>避免死锁（Deadlock Avoidance）：银行家算法（Banker’s Algorithm）和资源分配图（Resource Allocation Graph）。</p></li><li><p>检测和恢复死锁（Deadlock Detection and Recovery）：常见的死锁检测算法有图论算法、资源分配图算法等。恢复死锁可以采取一些策略，如终止某个或多个进程、抢占资源、回滚进程等。</p></li><li><p>忽略死锁（Deadlock Ignorance）：这种方法适用于死锁发生的概率极低，或者死锁发生后对系统造成的影响较小的场景。</p></li></ul><p><strong>3.进程通信方式</strong></p><ol><li><p>共享内存（Shared Memory）：多个进程可以访问和操作同一块共享内存区域，从而实现数据的共享和交换。进程可以直接读写内存，无需进行复制和传输。共享内存需要使用同步机制（如信号量）来避免多个进程同时访问导致的竞态条件。</p></li><li><p>管道（Pipe）：管道是一种半双工的通信方式，用于具有亲缘关系的进程间通信。一个进程可以将输出写入管道，另一个进程则可以从管道读取输入。管道可以是匿名管道（在进程创建时自动创建）或命名管道（通过文件系统中的路径名创建）。</p></li><li><p>命名管道（Named Pipe）：命名管道允许不具有亲缘关系的进程进行通信。与匿名管道不同，命名管道在文件系统中有一个关联的路径名，进程可以通过打开该路径名来进行通信。</p></li><li><p>消息队列（Message Queue）：消息队列是一种可以实现进程间异步通信的方式。进程可以将消息发送到队列中，其他进程则可以从队列中接收这些消息。消息队列允许不同进程之间以先进先出的顺序进行通信。</p></li><li><p>信号量（Semaphore）：信号量是一种用于进程间同步的机制。它可以用来保护临界区，限制资源的访问以及实现进程间的互斥和同步操作。进程可以通过等待（wait）和释放（signal）信号量来实现对共享资源的访问控制。</p></li><li><p>套接字（Socket）：套接字是一种用于网络通信的接口。它允许不同主机上的进程进行通信，实现了跨网络的进程间通信。</p></li><li><p>文件（File）：进程可以通过读写文件来进行通信。一个进程可以将数据写入文件，另一个进程则可以从文件中读取这些数据。</p></li></ol><p><strong>进程和线程的区别</strong></p><ul><li><p>定义：进程是程序的执行实例，是资源分配和调度的基本单位。它拥有独立的内存空间，包含程序代码、数据和执行状态。线程是进程内的一个执行单元，是进程的实际执行者。线程共享进程的内存空间和资源，可以看作是进程内的子任务。</p></li><li><p>资源占用：每个进程都有独立的内存空间和资源，包括文件描述符、环境变量、信号处理器等。不同进程之间的资源是相互隔离的，需要通过进程间通信机制来实现数据交换。而线程共享进程的内存空间和资源，可以直接读取和修改进程的数据。</p></li><li><p>切换开销：进程之间切换的开销较大，因为需要保存和恢复整个进程的状态信息，包括程序计数器、寄存器状态、内存映射等。线程切换的开销较小，因为线程共享进程的内存空间，只需要保存和恢复线程私有的寄存器状态即可。</p></li><li><p>通信和同步：进程间通信（IPC）是相对复杂的，需要使用进程间通信机制，如管道、消息队列、共享内存等。线程之间通信和同步较为简单，可以直接读写共享的内存空间，也可以使用线程间同步机制，如互斥锁、条件变量等，来保证数据的一致性和互斥访问。</p></li><li><p>安全性：由于每个进程有独立的内存空间，一个进程的崩溃不会影响其他进程。而在多线程编程中，一个线程的错误可能导致整个进程崩溃。</p></li></ul>              </div>            </details><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><details class="folding-tag" blue><summary> 展开查看 </summary>              <div class='content'>                            </div>            </details><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试八股文 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++11-右值引用</title>
+      <link href="/2023/05/26/C-11-%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/"/>
+      <url>/2023/05/26/C-11-%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>lvalue: 可以取地址</p><p>rvalue: 不可取地址</p><p>引用就是别名</p><p>只能通过左值去初始化左值引用，右值去初始化右值引用</p><p>常量的左值引用是万能的引用类型，可以用左值、左值引用、常量的右值引用</p><p>右值引用：延长临时变量的时间， A a=临时</p><p>左值引用：用来函数传递参数</p><p>移动构造函数-复用其他对象中的资源(堆内存)（浅拷贝+其他对象指针指向空）</p><p>右值引用：复用匿名对象所有资源</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++11 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 右值引用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>华为OD题库</title>
       <link href="/2023/05/23/%E5%8D%8E%E4%B8%BAOD%E9%A2%98%E5%BA%93/"/>
       <url>/2023/05/23/%E5%8D%8E%E4%B8%BAOD%E9%A2%98%E5%BA%93/</url>
