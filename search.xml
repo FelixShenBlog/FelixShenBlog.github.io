@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>如何让程序运行在Linux后台</title>
+      <link href="/2023/06/15/%E5%A6%82%E4%BD%95%E8%AE%A9%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%9C%A8Linux%E5%90%8E%E5%8F%B0/"/>
+      <url>/2023/06/15/%E5%A6%82%E4%BD%95%E8%AE%A9%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E5%9C%A8Linux%E5%90%8E%E5%8F%B0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>我用<code>SSH</code>软件可以连接到Linux服务器，不过一旦关闭SSH软件，Linux上跑的程序直接终止了。比如说我在Linux上运行一个Http服务器，为了维持运行，只能保持SSH软件开启，不过这根本就不合理啊，浪费了Linux服务器资源。所以呢，必须找到一个合适的办法，让程序长期跑在后台。</p><h2 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a>nohup</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>使用<code>pstree</code>后可以看到以下画面，我这里使用SSH客户端连接到了Linux服务器，并开启了两个终端，一个使用<code>ping</code>，一个使用<code>pstree</code>。当SSH客户端断开连接后，终端的会话就会结束。此时你运行的前台程序就会收到<code>（SIGHUP）</code>信号。默认情况下就会导致前台程序终止。</p><p><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230615224131.png" alt=""></p><h3 id="nohup原理"><a href="#nohup原理" class="headerlink" title="nohup原理"></a>nohup原理</h3><p>使用<code>nohup</code>后，这将使得运行的程序忽略挂断信号，并且不会受到SSH连接断开的影响。程序的输出也会被重定向到<code>nohup.out</code>文件中，便于查询执行过程。此时运行的程序就会被托管到<code>init进程(进程号为1)</code>下。</p><h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p><code>nohup ./your_program &amp;</code></p><h2 id="setsid"><a href="#setsid" class="headerlink" title="setsid"></a>setsid</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p><code>setsid</code> 的主要作用是将进程从当前终端分离出来，使其在后台独立运行，不受终端关闭或终端信号的影响。它常常与其他命令或进程一起使用，以确保进程在后台持续运行，即使终端会话结束。使用该命令后，进程会被<code>init进程</code>托管，这一段和nohup很像，不过一般为了查看输出，需要使用重定向符。</p><h3 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">setsid ./your_program <span class="comment"># 未设置重定向</span></span><br><span class="line">setsid ./your_program &gt; output.txt <span class="comment"># 将输出重定向到文件</span></span><br><span class="line">setsid ./your_program &lt; input.txt <span class="comment"># 将输入重定向为文件</span></span><br></pre></td></tr></table></figure><h2 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>Screen是一个在Linux和类Unix系统上运行的终端复用工具。它允许用户在一个终端会话中创建多个虚拟终端，并在其中运行多个程序或会话。Screen提供了一种持久化的会话环境，即使SSH连接断开或终端关闭，用户也可以重新连接到会话并继续之前的工作。和前面两种不同，此时程序被<code>screen</code>托管，而不是被<code>init</code>托管。不过使用前要先安装<code>sudo apt install screen</code>。</p><p><img title="" src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230615233403.png" alt="" data-align="inline"></p><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screen <span class="comment"># 创建screen终端</span></span><br><span class="line">Ctrl+a d <span class="comment"># 离开screen终端</span></span><br><span class="line">screen -<span class="built_in">ls</span> <span class="comment"># 显示已创建的screen终端</span></span><br><span class="line">screen -r screen_id <span class="comment">#重新连接已经离开的screen终端</span></span><br></pre></td></tr></table></figure><h2 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h2><h3 id="apt-update"><a href="#apt-update" class="headerlink" title="apt update"></a>apt update</h3><p><code>apt update</code> 是一个用于更新软件包列表的命令。在Ubuntu和其他基于Debian的Linux发行版中，<code>apt update</code> 命令用于与软件包管理系统的软件（repositories）通信，并获取最新的软件包信息。通过运行 <code>apt update</code>，系统会同步本地的软件包信息和远程软件源服务器上的软件包信息。这样可以确保你的本地软件包信息是最新的，从而能够正确地获取并安装最新的软件包版本。</p><h3 id="apt-upgrade"><a href="#apt-upgrade" class="headerlink" title="apt upgrade"></a>apt upgrade</h3><p><code>apt upgrade</code> 是一个用于升级已安装软件包的命令。在Ubuntu和其他基于Debian的Linux发行版中，<code>apt upgrade</code> 命令用于检查系统中已安装软件包的新版本，并执行升级操作，将这些软件包更新到最新可用的版本。在运行 <code>apt upgrade</code> 之前，建议先运行 <code>apt update</code> 命令来更新软件包列表，以确保获取到最新的软件包版本信息。</p><h2 id="其他Linux命令汇总"><a href="#其他Linux命令汇总" class="headerlink" title="其他Linux命令汇总"></a>其他Linux命令汇总</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment"># 杀死进程</span></span><br><span class="line">pstree <span class="comment"># 查看进程数</span></span><br><span class="line">ps -ef | grep info <span class="comment"># 查看特定进程的进程号和父进程</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>雷军2022年度演讲-如何度过人生三次低谷</title>
+      <link href="/2023/06/15/%E9%9B%B7%E5%86%9B2022%E5%B9%B4%E5%BA%A6%E6%BC%94%E8%AE%B2/"/>
+      <url>/2023/06/15/%E9%9B%B7%E5%86%9B2022%E5%B9%B4%E5%BA%A6%E6%BC%94%E8%AE%B2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h2><p>26岁的雷军是北京金山的总经理携带团队开发出盘古Office，不过面临耗费3年的心血却没有回报，公司资金链断裂。于是尝试站点卖货，前三天颗粒无收，不过在第四天学习观察，然后第七天成为销冠。在销售的过程中，发现用户需求开发出《电脑入门》，然后大销。顺着这个思路，开发出金山毒霸、金山词霸等，金山找到活下去的出路。终于明白了盘古Office失败的原因：闭门造车，没有了解到用户的真正需求。面对微软的竞争，不甘成为一个勉强存活公司的总经理，于是申请辞职。最后得到半年的gap Year。</p><h2 id="BBS-Bulletin-Board-System"><a href="#BBS-Bulletin-Board-System" class="headerlink" title="BBS(Bulletin Board System)"></a>BBS(Bulletin Board System)</h2><p>于是开始泡吧喜欢上了重金属音乐，然后又喜欢泡论坛，还成为了版主。最后这段经历帮助构建了小米社区。<code>只要有一定的自制力，娱乐也是很好的学习方式。</code></p><h2 id="第一波互联网浪潮"><a href="#第一波互联网浪潮" class="headerlink" title="第一波互联网浪潮"></a>第一波互联网浪潮</h2><p>1997,1998大量中国企业赶上互联网浪潮，腾讯、网易、新浪如雨后春笋冒出来。尝试收购网易，但是失败了。1999年底对互联网的理解：</p><blockquote><p>互联网就是“工具”，未来所有的公司都会用到，电商最有前途。</p></blockquote><p>于是2000上线了卓越网，不过互联网泡沫破灭。不过心怀期望，测试网页的每一个链接和banner，开辟物流和存储的先河。</p><blockquote><p>软件工程没有银子弹，凡是可能出错的地方就一定会出错。</p></blockquote><p>在2004年无钱维持，卖给了亚马逊。不过之后，电商复苏。对卓越网的总结:<code>创立于互联网泡沫破裂之后，倒下于电商全面崛起之前。</code>因为错过了互联网时代，而痛苦。失败总结：<code>创业不仅需要勤奋和天赋，还需要把握风口。</code></p><h2 id="移动互联网"><a href="#移动互联网" class="headerlink" title="移动互联网"></a>移动互联网</h2><p>之后把握主下一个浪潮，坚信移动互联网是今后10年的未来。那时候手机还只是功能机，网上很慢。不过还是下定决心用手机上网，坚持了10年。</p><blockquote><p>哪里有用户的痛点，哪里就有创业者的机会。</p></blockquote><p>今天的雷军是挫折和失败的馈赠，世界上的绝大多数都在面临着不可逃避的痛苦、失败、迷茫，所以不妨大胆迎接挑战。你所经历的所有挫折、失败，甚至那些看似毫无意义消磨时间的事情，都将成为你最宝贵的财富。</p><blockquote><p>人生很长，让我们保持信念，永远相信美好的事情即将发生。</p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>并查集</title>
       <link href="/2023/06/14/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
       <url>/2023/06/14/%E5%B9%B6%E6%9F%A5%E9%9B%86/</url>
