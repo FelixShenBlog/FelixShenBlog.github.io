@@ -4,6 +4,51 @@
   
     
     <entry>
+      <title>Linux设置开机自启动</title>
+      <link href="/2023/06/29/Linux%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
+      <url>/2023/06/29/Linux%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="在rc-local文件中添加自启动命令"><a href="#在rc-local文件中添加自启动命令" class="headerlink" title="在rc.local文件中添加自启动命令"></a>在rc.local文件中添加自启动命令</h2><ol><li><p>执行命令，编辑<code>/etc/rc.local</code></p><p><code>vim /etc/rc.local</code></p></li><li><p>在文件最后一行添加要执行的命令</p><p><code>cd /home/ubuntu/projects/tinyHTTP &amp;&amp; nohup sudo ./httpd &amp;</code></p></li><li><p>添加完后设置rc.local可执行权限</p><p><code>chmod +x /etc/rc.local</code></p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VisualStudio调试</title>
+      <link href="/2023/06/28/VisualStudio%E8%B0%83%E8%AF%95/"/>
+      <url>/2023/06/28/VisualStudio%E8%B0%83%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编译错误"><a href="#编译错误" class="headerlink" title="编译错误"></a>编译错误</h2><p>错误：<code>&#39;scanf&#39;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.</code></p><p>解决方案：</p><p>1.在写代码的前面加上如下宏定义</p><p><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230628105901.png" alt=""></p><p>2.关闭SDL检查</p><p>SDL(Security Development Lifecycle)是指安全开发生命周期，是一个安全保证的过程。</p><p><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230628110317.png" alt=""></p><h2 id="动态调试"><a href="#动态调试" class="headerlink" title="动态调试"></a>动态调试</h2><ol><li><p>设置断点(鼠标左键点击代码左侧)</p></li><li><p>开始调试</p><ol><li><p><code>F5</code>可以运行到断点或者程序结束(没有断点)</p></li><li><p><code>F11</code>单步进入到程序第一行代码</p></li></ol><p><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230628123419.png" alt="F5执行效果"></p><p><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/20230628123533.png" alt="F10执行效果"></p></li><li><p>调试中</p><ol><li><p><code>F5</code>继续运行直到下一个断点</p></li><li><p><code>F11</code>单步执行，遇到函数进入[没有调试源码的不进入]。</p></li><li><p><code>shift+F11</code>进入函后的跳出指令，</p></li><li><p><code>F10</code>单步跳过，遇到函数不进入。</p></li></ol></li><li><p>查看调试变量</p><ol><li><p>自动窗口：查看执行代码周围的变量(比如当前执行代码的上下三行内)</p></li><li><p>局部变量：当前作用域内的变量</p></li><li><p>监视：可以监视<code>变量</code>或者<code>表达式</code></p></li></ol></li><li><p>查看函数调用层次(调用堆栈)</p></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>拓扑排序</title>
+      <link href="/2023/06/25/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
+      <url>/2023/06/25/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://leetcode.cn/problems/course-schedule/description/">207.课程表</a></p><p>[1,0]表示0-&gt;1</p><p>数据结构：</p><ul><li><p>入度表 <code>vector&lt;int&gt;</code></p></li><li><p>邻接表 <code>map&lt;int,vector&lt;int&gt;&gt;</code></p></li><li><p>队列 <code>queue&lt;int&gt;</code> 存储入度为0的结点</p></li></ul><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">canFinish</span><span class="params">(<span class="type">int</span> numCourses, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; prerequisites)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        1-&gt;2</span></span><br><span class="line"><span class="comment">        1-&gt;3</span></span><br><span class="line"><span class="comment">        得到1-&gt;2,3</span></span><br><span class="line"><span class="comment">        将1弹出时，2的入度和3的入度--</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">inDegree</span><span class="params">(numCourses)</span></span>;</span><br><span class="line">        map&lt;<span class="type">int</span>,vector&lt;<span class="type">int</span>&gt;&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;prerequisites.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            inDegree[prerequisites[i][<span class="number">0</span>]]++;</span><br><span class="line">            map[prerequisites[i][<span class="number">1</span>]].<span class="built_in">push_back</span>(prerequisites[i][<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; que;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;numCourses; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(inDegree[i]==<span class="number">0</span>) que.<span class="built_in">push</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> count=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(que.<span class="built_in">size</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> selected=que.<span class="built_in">front</span>();<span class="comment">//当前选的课</span></span><br><span class="line">            que.<span class="built_in">pop</span>();</span><br><span class="line">            count++;</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; next_course=map[selected];<span class="comment">//后序课</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;next_course.<span class="built_in">size</span>(); i++)</span><br><span class="line">            &#123;</span><br><span class="line">                inDegree[next_course[i]]--;</span><br><span class="line">                <span class="keyword">if</span>(inDegree[next_course[i]]==<span class="number">0</span>) que.<span class="built_in">push</span>(next_course[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count==numCourses;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++输出格式</title>
       <link href="/2023/06/25/C-%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/"/>
       <url>/2023/06/25/C-%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/</url>
