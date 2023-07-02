@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>埃氏筛法</title>
+      <link href="/2023/07/02/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/"/>
+      <url>/2023/07/02/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h2><p>一种求质数的高级算法</p><p><img src="https://pic.leetcode-cn.com/1606932458-HgVOnW-Sieve_of_Eratosthenes_animation.gif" alt="Sieve_of_Eratosthenes_animation.gif"></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>左值引用和右值引用</title>
+      <link href="/2023/07/01/%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8C%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/"/>
+      <url>/2023/07/01/%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8C%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="左值引用与右值引用的区别"><a href="#左值引用与右值引用的区别" class="headerlink" title="左值引用与右值引用的区别"></a>左值引用与右值引用的区别</h2><p><code>定义</code>：左值引用是对左值的引用。右值引用是对右值的引用。</p><p><code>功能差异</code>:</p><ul><li><p>左值引用(避免对象拷贝)</p><ul><li><p>函数传参</p></li><li><p>函数返回值(拷贝赋值函数)</p></li></ul></li><li><p>右值引用</p><ul><li><p>移动语义</p></li><li><p>完美转发</p></li></ul></li></ul><h2 id="左值和右值的区别"><a href="#左值和右值的区别" class="headerlink" title="左值和右值的区别"></a>左值和右值的区别</h2><p>左值的特性：</p><ul><li><p>可以放在<code>=</code>的左边</p></li><li><p>能够取地址</p></li><li><p>具备名字(可以有<code>左</code>引用)</p></li></ul><p>左值举例：</p><ul><li><p>变量名</p></li><li><p>返回值为引用的函数调用</p></li><li><p>前置自增/前置自减</p></li><li><p>赋值运算符或复合赋值运算</p></li><li><p>解引用</p></li></ul><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 先自增再赋值给i，再进行一个返回。所以++i这个表达式返回的还是i本身，可以取地址</span></span><br><span class="line">    <span class="type">int</span> i=<span class="number">0</span>;</span><br><span class="line">    ++i=<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//赋值运算符|复合赋值运算</span></span><br><span class="line">    (i=<span class="number">9</span>)=<span class="number">100</span>;</span><br><span class="line">    (i+=<span class="number">10</span>)=<span class="number">100</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//解引用</span></span><br><span class="line">    <span class="type">int</span> *num = <span class="keyword">new</span> <span class="built_in">int</span>(<span class="number">10</span>);</span><br><span class="line">    *num=<span class="number">100</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr><p>右值的特性：</p><ul><li><p>只能在<code>=</code>右边</p></li><li><p>不能取地址</p></li><li><p>不具备名字(不能有<code>左</code>引用)</p></li></ul><p>右值类型：</p><ul><li><p>纯右值(不具备标识符的临时对象或表达式)</p><ul><li><p>字面值</p></li><li><p>返回非引用类型的函数调用</p></li><li><p>后置自增/后置自减</p></li><li><p>算术表达式/逻辑表达式</p></li></ul></li><li><p>将亡值：</p><ul><li><p>可以用来触发移动构造或者移动赋值构造，并进行资源转移。</p></li><li><p>将亡值是一种特殊的纯右值，具有右值引用类型，可以进行修改和转移的对象。(因为只有右值引用类型才能触发移动构造或者移动赋值构造)。</p></li><li><p>move()主要用于将对象转换为右值引用，以便实现移动语义和资源的转移操作。</p></li><li><p><code>将亡值是一种要被移动的右值</code>，它允许对资源进行转移，以实现高效的资源管理。</p></li></ul></li></ul><h2 id="移动语义"><a href="#移动语义" class="headerlink" title="移动语义"></a>移动语义</h2><p>作用：对象赋值时，避免资源的重新分配。</p><p>实现：移动构造以及移动拷贝构造</p><p>STL应用：由于实现了移动语义，效率大幅增高。例如insert，erase。</p><h2 id="完美转发"><a href="#完美转发" class="headerlink" title="完美转发"></a>完美转发</h2><h2 id="大杂烩"><a href="#大杂烩" class="headerlink" title="大杂烩"></a>大杂烩</h2><p>左值引用能否指向右值，右值引用能否指向左值？</p><ul><li><p>const左值引用能指向右值，局限是不能修改这个值</p></li><li><p>右值引用可以通过move()指向左值</p></li><li><p>声明出的左值引用和右值引用是左值</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GDB调试</title>
       <link href="/2023/06/30/GDB%E8%B0%83%E8%AF%95/"/>
       <url>/2023/06/30/GDB%E8%B0%83%E8%AF%95/</url>
