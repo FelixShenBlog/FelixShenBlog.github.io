@@ -56,7 +56,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-07-03 22:27:19'
+  postUpdate: '2023-07-09 22:43:44'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -163,198 +163,140 @@
     })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4082146_34cixruws56.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
 <style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
   white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
-<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Felix's Footprint"><span class="site-name">Felix's Footprint</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/14/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集"><img class="post-bg" src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="并查集"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/14/%E5%B9%B6%E6%9F%A5%E9%9B%86/" title="并查集">并查集</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T14:20:28.000Z" title="发表于 2023-06-14 22:20:28">2023-06-14</time></span></div><div class="content">概念并查集,正如它名字一样，一种负责对集合的合并(Union)与查询(Find)的数据结构。
-代码#include&lt;bits/stdc++.h&gt;using namespace std;int n = 1005; // n根据题目中节点数量而定，一般比节点数量大一点就好vector&lt;int&gt; father = vector&lt;int&gt; (n, 0); // C++里的一种数组结构// 并查集初始化void init() &#123;    for (int i = 0; i &lt; n; ++i) &#123;        father[i] = i;    &#125;&#125;// 并查集里寻根的过程int find(int u) &#123;    if(father[u]==u) return u;    else&#123;		int x=find(father[u]);		father[u]=x;		return x;	&#125;	&#125;// 将v-&gt;u 这条边加入并查集void join(int u, int v) &# ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/14/%E5%88%B7%E9%A2%98%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="刷题小技巧"><img class="post-bg" src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="刷题小技巧"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/14/%E5%88%B7%E9%A2%98%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="刷题小技巧">刷题小技巧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T14:15:24.000Z" title="发表于 2023-06-14 22:15:24">2023-06-14</time></span></div><div class="content">求整数上各个位的数普通解法#include&lt;iostream&gt;using namespace std;int main()&#123;	int num=234;	while(num!=0)&#123;		cout&lt;&lt;num%10&lt;&lt;&quot; &quot;;		num/=10;	&#125;	return 0;&#125;
-STL#include&lt;iostream&gt;using namespace std;int main()&#123;	int num=234;	string str=to_string(num);	for(int i=0; i&lt;str.size(); i++) cout&lt;&lt;str[i]&lt;&lt;&quot; &quot;;	return 0;&#125;
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/12/HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" title="HTTP服务器开发"><img class="post-bg" src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTTP服务器开发"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/12/HTTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" title="HTTP服务器开发">HTTP服务器开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-12T14:41:12.000Z" title="发表于 2023-06-12 22:41:12">2023-06-12</time></span></div><div class="content">客户端请求消息客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成，下图给出了请求报文的一般格式。
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Felix's Footprint"><span class="site-name">Felix's Footprint</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/29/Linux%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" title="Linux设置开机自启动"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux设置开机自启动"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/29/Linux%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" title="Linux设置开机自启动">Linux设置开机自启动</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-29T07:14:37.000Z" title="发表于 2023-06-29 15:14:37">2023-06-29</time></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">在rc.local文件中添加自启动命令
+执行命令，编辑/etc/rc.local
+vim /etc/rc.local
 
-实例
-GET / HTTP/1.1\r\nHost: 127.0.0.1:10000\r\nConnection: keep-alive\r\nCache-Control: max-age=0\r\n……buff=Accept-Language: zh-CN,zh;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6\r\n\r\n
-HTTP 响应头信息HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。
+在文件最后一行添加要执行的命令
+cd /home/ubuntu/projects/tinyHTTP &amp;&amp; nohup sudo ./httpd &amp;
 
-状态码
-
+添加完后设置rc.local可执行权限
+chmod +x /etc/rc.local
 
 
-分类
-分类描述
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/28/VisualStudio%E8%B0%83%E8%AF%95/" title="VisualStudio调试"><img class="post-bg" src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="VisualStudio调试"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/28/VisualStudio%E8%B0%83%E8%AF%95/" title="VisualStudio调试">VisualStudio调试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-28T01:49:25.000Z" title="发表于 2023-06-28 09:49:25">2023-06-28</time></span></div><div class="content">编译错误错误：&#39;scanf&#39;: This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+解决方案：
+1.在写代码的前面加上如下宏定义
 
+2.关闭SDL检查
+SDL(Security Development Lifecycle)是指安全开发生命周期，是一个安全保证的过程。
 
+动态调试
+设置断点(鼠标左键点击代码左侧)
 
+开始调试
 
-1**
-信息，服务器收到请求，需要请求者继续执行操作
+F5可以运行到断点或者程序结束(没有断点)
 
-
-2**
-成功，操作被成功接收并处理
-
-
-3**
-重定向，需要进一步的操作以完成请求
-
-
-4**
-客户端错误，请求包含语法错误或无法完成请求
-
-
-5**
-服务器错误，服务器在处理请求的过程中发生了错误
+F11单步进入到程序第一行代码
 
 
 
 
-判断请求的资源是否存在stat函数
-作用：获 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/09/%E6%AF%92%E9%B8%A1%E6%B1%A4/" title="毒鸡汤"><img class="post-bg" src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="毒鸡汤"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/09/%E6%AF%92%E9%B8%A1%E6%B1%A4/" title="毒鸡汤">毒鸡汤</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-09T12:50:36.000Z" title="发表于 2023-06-09 20:50:36">2023-06-09</time></span></div><div class="content">多少岁不重要，看起来像几岁才重要。不要把辛苦和怨气都挂在脸上，你想要最好的生活，就先让生活，看到最好的你。
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/06/%E7%AE%80%E5%8E%86%E5%A6%82%E4%BD%95%E5%86%99/" title="简历如何写(开发)"><img class="post-bg" src="/img/cover6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="简历如何写(开发)"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/06/%E7%AE%80%E5%8E%86%E5%A6%82%E4%BD%95%E5%86%99/" title="简历如何写(开发)">简历如何写(开发)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-06T11:41:07.000Z" title="发表于 2023-06-06 19:41:07">2023-06-06</time></span></div><div class="content">投简历技巧
-最好的是一岗位，一简历(没有什么东西，既省时又好用的)
 
-简历要体现对方的需求，而不是我会啥
+调试中
 
-杜绝“我不会啊”的思想。(不敢写，脸皮薄，怕挫折，丢面子，怕丢人)，很多技术是可以短期突击的。
+F5继续运行直到下一个断点
 
-面试只有收获，没有损失。
+F11单步执行，遇到函数进入[没有调试源码的不进入]。
 
-简历是敲门砖，任何人都要包装的
+shift+F11进入函后的跳出指令，
 
-简历的包装盒修改只是一个技巧，技术才是王道
-
-任何公司都不愿意培养人，尽量不要表现出你的技术短板，更不要说是来公司学习的。来公司是分享我的技术，是来为公司添砖加瓦的。
+F10单步跳过，遇到函数不进入。
 
 
-个人简历个人情况姓名、性别、年龄、邮箱、联系方式、学校学历、籍贯
-求职意向职位、渴望薪水(写准确值或者面议，不要写范围)
-技能描述(技术服务于项目，项目加持于技术)
-精通、熟悉Java，多年一线开发经验，具备良好的编程能力，并熟练使用设计模式。(简历上就写精通，不管你写熟悉或者精通，面试官不会因为你写熟悉就简单问你，该问的都得问。整个技术栈内，至少有3个精通。)
 
-精通Java并发编程，对Java的锁机制，线程池机制，AQS等都有深入理解，并在项目中熟练使用。
+查看调试变量
 
-精通jvm，对垃圾回收算法和垃圾回收有深入理解，并参与过线上项目的jvm调优工作。
+自动窗口：查看执行代码周围的变量(比如当前执行代码的上下三行内)
 
-精通s ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/06/MySQL%E7%B4%A2%E5%BC%95/" title="MySQL索引"><img class="post-bg" src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL索引"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/06/MySQL%E7%B4%A2%E5%BC%95/" title="MySQL索引">MySQL索引</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-06T03:15:20.000Z" title="发表于 2023-06-06 11:15:20">2023-06-06</time></span></div><div class="content">索引概述索引(index)是帮助MySQL高效获取数据的数据结构(有序)。
-索引优缺点
-索引数据结构
+局部变量：当前作用域内的变量
 
-Btree(多路平衡树)二叉树：顺序插入时，会形成一个链表，查询性能大大降低。大数据量情况下，层级较深，检索速度慢。
-红黑树：大数据量情况下，层级较深，检索速度慢。
-B树: m叉树
+监视：可以监视 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/25/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" title="拓扑排序"><img class="post-bg" src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="拓扑排序"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/25/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" title="拓扑排序">拓扑排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-25T14:21:44.000Z" title="发表于 2023-06-25 22:21:44">2023-06-25</time></span></div><div class="content">207.课程表
+[1,0]表示0-&gt;1
+数据结构：
 
-树中每个结点中至多有m个孩子结点(至多有m-1个关键字)
+入度表 vector&lt;int&gt;
 
-2=&lt;根节点孩子树&lt;=m
+邻接表 map&lt;int,vector&lt;int&gt;&gt;
 
-ceil(m/2)=&lt;非叶子结点孩子树&lt;=m
-
-所有叶子结点在同一层上
+队列 queue&lt;int&gt; 存储入度为0的结点
 
 
-B+树与B树的区别
+class Solution &#123;public:    bool canFinish(int numCourses, vector&lt;vector&lt;int&gt;&gt;&amp; prerequisites) &#123;        /*        1-&gt;2        1-&gt;3        得到1-&gt;2,3        将1弹出时，2的入度和3的入度--        */        vector&lt;int&gt; inDegree(numCourses);        map&lt;int,vector&lt;int&gt;&gt; map;        for(int i=0; i&lt;prerequisites.size(); i++)        &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/25/C-%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/" title="C++输出格式"><img class="post-bg" src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++输出格式"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/25/C-%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F/" title="C++输出格式">C++输出格式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-25T13:04:17.000Z" title="发表于 2023-06-25 21:04:17">2023-06-25</time></span></div><div class="content">对输出小数精度控制头文件:&lt;iomanip&gt;
+注意：不加fixed，setprecisioin()会控制有效数字的位数，而不是小数点的位数
+#include&lt;iomanip&gt;#include&lt;iostream&gt;using namespace std;int main()&#123;    double pi=3.14159;    cout&lt;&lt;setprecision(3)&lt;&lt;pi&lt;&lt;endl;//3.14    cout&lt;&lt;fixed&lt;&lt;setprecision(3)&lt;&lt;pi&lt;&lt;endl;//3.142            return 0;&#125;
+ </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/24/%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95/" title="移动测试“"><img class="post-bg" src="/img/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="移动测试“"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/24/%E7%A7%BB%E5%8A%A8%E6%B5%8B%E8%AF%95/" title="移动测试“">移动测试“</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-24T07:33:30.000Z" title="发表于 2023-06-24 15:33:30">2023-06-24</time></span></div><div class="content">概念
+功能测试:查看功能是否正常
 
-所有数据都在叶子结点
+安装卸载测试
 
-叶子结点形成一个单向链表
-
-
-MySQL中B+树进行了优化，叶子结点由双链表串联。
-Hash特点：
-
-只能用于对等比较，不支持范围查询
-
-无法利用索引完成排序操作
-
-查询效率高，通常只需要一次检索就可以了，效率通常比B+树索引
-
-
-为什么InnoDB存储引擎选择使用B+索引结构
-
-相对于二叉树，层级更少，搜索效率高；
-
-对于B-tree，无论是叶子节点还是非叶子节点，都会保存数据，这样导致一页中存储  的键值减少，指针跟着减少，要同样保存大量数据，只能增加树的高度，导致性能 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" title="软件测试分类"><img class="post-bg" src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件测试分类"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" title="软件测试分类">软件测试分类</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-05T13:43:07.000Z" title="发表于 2023-06-05 21:43:07">2023-06-05</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件测试"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/05/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试">软件测试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-05T12:27:41.000Z" title="发表于 2023-06-05 20:27:41">2023-06-05</time></span></div><div class="content">测试定义
-使用人工或者自动的手段来运行或者测试某个系统的过程
-
-目的在于检验它是否满足规定的需求(弄清预期结果和实际结果的差别)
-
-
-测试目的以最小的人力、物力和时间找出软件中潜在的错误和缺陷。
-测试的原则
-证明软件中存在缺陷
-
-不能穷尽测试
-
-测试应该尽早介入
-
-28原则(80%的用户只用到了20%的功能，80%的错误出现在20%的地方)
-
-不存在缺陷谬论(程序一定有缺陷)
-
-妥善保存一切文档
-
-
-测试标准国际标准25010、国内标准GBT18905
-测试的基本要求
-外观界面测试
-
-易用测试
+升级测试
 
 兼容性测试
 
-安全性测试
+Android系统版本
 
-性能测试
+厂商二次开发版本
 
-功能测试
+不同的分辨率
 
-
-测试的工作流程
-需求分析(阅读需求文档，分析需求的点，参与需求评审)
-
-测试计划和测试方案(宏观计划和实际方案)
-
-测试用例设计
-
-测试用例执行
-
-评估阶段 测试报告
+不同的网络
 
 
-开发模式瀑布模型
-优点：
 
-为项目提供了按阶段划分的检查点
-
-可在迭代模型中应用瀑布模型
-
-当前阶段完成后，只需要关注后序阶段
+网络切换、中断测试使用中来电话、短信横竖屏切换健壮性:耗电量、流量消耗、崩满回复
 
 
-缺点：
+环境搭建
+java sdk
 
-不适合需求变动多的项目
+安装
 
-成品消耗较多时间
-
-灵活性较差
+配置JAVA_HOME和PATH
 
 
-适合项目类型：学生管理模型、银行系统
-增量模型定义：把瀑布模型的顺序 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/04/Docker%E5%85%A5%E9%97%A8/" title="Docker入门"><img class="post-bg" src="/img/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Docker入门"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/04/Docker%E5%85%A5%E9%97%A8/" title="Docker入门">Docker入门</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-04T15:20:47.000Z" title="发表于 2023-06-04 23:20:47">2023-06-04</time></span></div><div class="content">基本概念Docker是一个用于构建(build)、运行(run)、传送(share)应用程序的平台。有了Docker就可以将应用程序和它运行时所需要的各种依赖包、第三方软件库、配置文件等打包在一起，以便在任何环境都可以正确运行。
-为什么使用Docker未使用Docker时，浪费大量的时间在配置环境上
 
-使用Docker后，可以将配置步骤打包，只要在开发环境中运行成功，测试环境也是可以成功运行的。
+Android SDK
 
-Docker和虚拟机的区别虚拟机
-虚拟机的实现是基于虚拟化技术，它是一种将物理资源虚拟成多个逻辑资源的技术。它可以将一台物理服务器虚拟成多个虚拟化服务器。每个逻辑服务器都可以有自己的操作系统、CPU、内存、硬盘和网络接口等等，可以独立运行。不过缺点明显，若我们只需要Web服务器，但是虚拟机却需要启动一个完整的系统，包括系统的内核、各种工具甚至图形界面等等，这会导致资源浪费和启动速度慢的问题。
+解压
 
-Docker
-Docker和容器是两种不同的概念，其实Docker只是容器的一种实现，是一种容器化的解决方案和平台，而容器是一种虚拟化技术和虚拟机类似，也是一种独立的环境，可以在这个环境运行应用程序。 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/02/KMP/" title="KMP"><img class="post-bg" src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="KMP"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/02/KMP/" title="KMP">KMP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-02T04:28:21.000Z" title="发表于 2023-06-02 12:28:21">2023-06-02</time></span></div><div class="content">next数组求解next数组也就是最长前后缀表
-</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="page-number" href="/page/5/#content-inner">5</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Felix</div><div class="author-info__description">但行好事，莫问前程。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/felixshenblog"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FelixShenBlog" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:hubery123698745@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>鸡汤</span></div><div class="announcement_content">You got a dream, you got to protect it.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/03/%E5%B2%9B%E5%B1%BF%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF/" title="岛屿问题模板"><img src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="岛屿问题模板"/></a><div class="content"><a class="title" href="/2023/07/03/%E5%B2%9B%E5%B1%BF%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF/" title="岛屿问题模板">岛屿问题模板</a><time datetime="2023-07-03T14:15:06.000Z" title="发表于 2023-07-03 22:15:06">2023-07-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/02/%E5%8F%8C%E6%8C%87%E9%92%88%E6%A8%A1%E6%9D%BF/" title="双指针模板"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="双指针模板"/></a><div class="content"><a class="title" href="/2023/07/02/%E5%8F%8C%E6%8C%87%E9%92%88%E6%A8%A1%E6%9D%BF/" title="双指针模板">双指针模板</a><time datetime="2023-07-02T09:46:46.000Z" title="发表于 2023-07-02 17:46:46">2023-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/02/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" title="埃氏筛法"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="埃氏筛法"/></a><div class="content"><a class="title" href="/2023/07/02/%E5%9F%83%E6%B0%8F%E7%AD%9B%E6%B3%95/" title="埃氏筛法">埃氏筛法</a><time datetime="2023-07-02T03:49:30.000Z" title="发表于 2023-07-02 11:49:30">2023-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/01/%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8C%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/" title="左值引用和右值引用"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="左值引用和右值引用"/></a><div class="content"><a class="title" href="/2023/07/01/%E5%B7%A6%E5%80%BC%E5%BC%95%E7%94%A8%E5%92%8C%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/" title="左值引用和右值引用">左值引用和右值引用</a><time datetime="2023-06-30T22:09:40.000Z" title="发表于 2023-07-01 06:09:40">2023-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/30/GDB%E8%B0%83%E8%AF%95/" title="GDB调试"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GDB调试"/></a><div class="content"><a class="title" href="/2023/06/30/GDB%E8%B0%83%E8%AF%95/" title="GDB调试">GDB调试</a><time datetime="2023-06-30T11:54:58.000Z" title="发表于 2023-06-30 19:54:58">2023-06-30</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+配置ANDROID_HOME和PATH
+
+
+
+安装虚拟机/真机的开发者模式
+
+appium client(Python)
+
+appium server
+
+
+adb命令adb devices：测试连接是否成功
+adb devices -l：查看deviceName
+
+model后面就是设备名
+adb shell: 进入安卓内核
+adb shell getprop ro.build.version.release:获取安卓版本
+adb shell dumpsys window | findstr mCurrentFocus 查看运行的apk和界面
+
+/前是包名，/后是app当前的活动
+appium连接真机
+注意：
+
+Remote Path必 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/22/map%E6%8E%92%E5%BA%8F/" title="map排序"><img class="post-bg" src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="map排序"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/22/map%E6%8E%92%E5%BA%8F/" title="map排序">map排序</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-22T05:06:29.000Z" title="发表于 2023-06-22 13:06:29">2023-06-22</time></span></div><div class="content">map对于key(键)的排序map中的key 默认排序#include&lt;bits/stdc++.h&gt;using namespace std;//对于map中的key的默认排序 map&lt;int,string&gt;m; int main()&#123;	m[1]=&quot;iui&quot;;	m[87]=&quot;sjddd&quot;;	m[2]=&quot;jsd&quot;;	m[67]=&quot;yuuuu&quot;;	for(auto item: m)	&#123;		cout&lt;&lt;item.first&lt;&lt;&quot; &quot;&lt;&lt;item.second&lt;&lt;endl;	&#125;	return 0;&#125;
+key的自定义排序#include&lt;bits/stdc++.h&gt;using namespace std; struct rule&#123;	bool operator()(const string&amp; a,const string&amp; b) const	&#123; ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/22/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/" title="输入输出重定向"><img class="post-bg" src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="输入输出重定向"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/22/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91/" title="输入输出重定向">输入输出重定向</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-22T04:33:39.000Z" title="发表于 2023-06-22 12:33:39">2023-06-22</time></span></div><div class="content">freopen() 定义在&lt;stdio.h&gt;头文件中，是 C 语言标准库中的函数，专门用于重定向输入流（包括 scanf()、gets() 等）和输出流（包括 printf()、puts() 等）。值得一提的是，该函数也可以对 C++ 中的 cin 和 cout 进行重定向。
+#include &lt;iostream&gt;    //cin、cout#include &lt;string&gt;      //string#include &lt;stdio.h&gt;     //freopenusing namespace std;int main()  &#123;    string name, url;    //将标准输入流重定向到 in.txt 文件    freopen(&quot;in.txt&quot;, &quot;r&quot;, stdin);    cin &gt;&gt; name &gt;&gt; url;    //将标准输出重定向到 out.txt文件    freopen(&quot;out.txt&quot;, &quot;w&q ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/22/%E9%9A%8F%E6%9C%BA%E6%95%B0/" title="随机数"><img class="post-bg" src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随机数"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/22/%E9%9A%8F%E6%9C%BA%E6%95%B0/" title="随机数">随机数</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-22T04:24:00.000Z" title="发表于 2023-06-22 12:24:00">2023-06-22</time></span></div><div class="content">生成随机数#include&lt;iostream&gt;#include&lt;cstdlib&gt;#include&lt;ctime&gt;using namespace std;int main()&#123;	unsigned seed;	seed=time(0);//返回1970年1月1日午夜开始到现在逝去的秒数	cout&lt;&lt;seed&lt;&lt;endl;	srand(seed);//只需调用一次	cout&lt;&lt;rand()&lt;&lt;endl;	return 0;&#125;
+限制随机数的范围#include&lt;iostream&gt;#include&lt;cstdlib&gt;#include&lt;ctime&gt;using namespace std;int main()&#123;	unsigned seed;	seed=time(0);//返回1970年1月1日午夜开始到现在逝去的秒数	cout&lt;&lt;seed&lt;&lt;endl;	srand(seed);//只需调用一次	//生成范围为[min_val,max ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/06/21/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2/" title="字符串的分割"><img class="post-bg" src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="字符串的分割"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/21/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%86%E5%89%B2/" title="字符串的分割">字符串的分割</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-21T11:23:09.000Z" title="发表于 2023-06-21 19:23:09">2023-06-21</time></span></div><div class="content">stringstream#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	//1,2,3,4,5	//如何分割逗号间隔的字符串	string str;	getline(cin,str);	stringstream ss(str);	string str_num;	vector&lt;int&gt; vec;	while(getline(ss,str_num,&#x27;,&#x27;))	&#123;		vec.push_back(stoi(str_num));	&#125;	for(int i=0; i&lt;vec.size(); i++)	&#123;		cout&lt;&lt;vec[i]&lt;&lt;&quot; &quot;;	&#125;	return 0;&#125;
+find &amp; substr#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	//1,2,3,4,5	//如何分割逗号间隔的字符串	s ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/17/%E8%BF%87%E5%8E%BB%E4%B8%80%E5%B9%B4%E6%9D%A5%E7%9A%84%E6%80%BB%E7%BB%93%E4%BB%A5%E5%8F%8A%E6%9C%AA%E6%9D%A5%E6%89%93%E7%AE%97/" title="过去一年来的总结以及未来打算"><img class="post-bg" src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="过去一年来的总结以及未来打算"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/17/%E8%BF%87%E5%8E%BB%E4%B8%80%E5%B9%B4%E6%9D%A5%E7%9A%84%E6%80%BB%E7%BB%93%E4%BB%A5%E5%8F%8A%E6%9C%AA%E6%9D%A5%E6%89%93%E7%AE%97/" title="过去一年来的总结以及未来打算">过去一年来的总结以及未来打算</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-17T15:03:59.000Z" title="发表于 2023-06-17 23:03:59">2023-06-17</time></span></div><div class="content">长话短说吧，过去一年的时间都在备战考研。至于考研的原因也很简单，当时自己太菜了，觉得肯定找不到工作，想着在蓄水池先待着，然后再找找机会的。结果寄了，自己还是那么菜。当时选择报考厦门大学，是因为有个新开的人工智能系，分数还蛮低的。然后自己觉得肯定可以的，不过天不随人愿，我报考的那年分数暴涨50分，我的分数是超过了去年的分数线，不过只有10多分。毫无意外，没了。失败总结：那时候根本来说还是太过于自信了，目光也太短浅，看不到长期的发展趋势。最根本的是不够努力，有时候真的是自我感动了，以为自己做的蛮多准备的。所以呢，有时候事情能做好的时候，就要把它做到完美，不然根本没有获胜的机会。
+考研结束后呢，已经12月底了，还没完成实习任务，花了一个多月时间，找到了一份工作，不过是电话客服。做了一两个月。然后身心俱疲的回学校了。不过还有一门课和毕业设计等待着我(考研太专心，缺考了一门课)。回到学校呢已经4月份了，那时候真的觉得很累。期间呢有投过几份简历，不过简历写得太烂了，几乎都是已读不回的。不过此时身边的同学也几乎都有offer了，我那时候我也很焦虑。然后摆烂了好几天，期间我一直做思想斗争，似乎说服我自 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Felix</div><div class="author-info__description">但行好事，莫问前程。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/felixshenblog"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FelixShenBlog" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:hubery123698745@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>鸡汤</span></div><div class="announcement_content">You got a dream, you got to protect it.</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/Python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="Python模块和包"><img src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python模块和包"/></a><div class="content"><a class="title" href="/2023/07/09/Python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="Python模块和包">Python模块和包</a><time datetime="2023-07-09T12:23:29.000Z" title="发表于 2023-07-09 20:23:29">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/Python%E5%BC%82%E5%B8%B8/" title="Python异常"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python异常"/></a><div class="content"><a class="title" href="/2023/07/09/Python%E5%BC%82%E5%B8%B8/" title="Python异常">Python异常</a><time datetime="2023-07-09T08:45:20.000Z" title="发表于 2023-07-09 16:45:20">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文件操作"/></a><div class="content"><a class="title" href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作">文件操作</a><time datetime="2023-07-09T07:51:34.000Z" title="发表于 2023-07-09 15:51:34">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python数据容器"><img src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python数据容器"/></a><div class="content"><a class="title" href="/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python数据容器">Python数据容器</a><time datetime="2023-07-08T10:59:16.000Z" title="发表于 2023-07-08 18:59:16">2023-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python函数"/></a><div class="content"><a class="title" href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数">Python函数</a><time datetime="2023-07-08T09:14:50.000Z" title="发表于 2023-07-08 17:14:50">2023-07-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C-11/"><span class="card-category-list-name">C++11</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LeetCode100/"><span class="card-category-list-name">LeetCode100</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Markdown/"><span class="card-category-list-name">Markdown</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/STL/"><span class="card-category-list-name">STL</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"><span class="card-category-list-name">个人感悟</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"><span class="card-category-list-name">数据结构与算法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87/"><span class="card-category-list-name">面试八股文</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/" style="font-size: 1.15em; color: rgb(116, 82, 124)">右值引用</a><a href="/tags/Linux/" style="font-size: 1.45em; color: rgb(37, 76, 106)">Linux</a><a href="/tags/Markdown/" style="font-size: 1.15em; color: rgb(147, 18, 167)">Markdown</a><a href="/tags/STL/" style="font-size: 1.45em; color: rgb(81, 87, 75)">STL</a><a href="/tags/IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 1.15em; color: rgb(54, 80, 198)">IO多路复用</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/" style="font-size: 1.15em; color: rgb(168, 188, 167)">个人感悟</a><a href="/tags/Java/" style="font-size: 1.45em; color: rgb(103, 13, 68)">Java</a><a href="/tags/LeetCode100/" style="font-size: 1.45em; color: rgb(7, 179, 15)">LeetCode100</a><a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.15em; color: rgb(71, 45, 110)">哈希表</a><a href="/tags/%E5%89%8D%E7%BC%80%E6%A0%91/" style="font-size: 1.15em; color: rgb(14, 16, 122)">前缀树</a><a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 1.15em; color: rgb(23, 41, 18)">字典树</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(153, 26, 152)">数据结构</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(4, 83, 180)">C++</a><a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 1.15em; color: rgb(191, 85, 157)">单调栈</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 1.45em; color: rgb(66, 192, 27)">数据结构与算法</a><a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" style="font-size: 1.15em; color: rgb(108, 73, 65)">代码随想录</a><a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 1.15em; color: rgb(101, 3, 34)">刷题</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(93, 58, 2)">数据结构算法</a><a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 1.15em; color: rgb(173, 170, 14)">滑动窗口</a><a href="/tags/%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88/" style="font-size: 1.15em; color: rgb(162, 177, 76)">哈希集合</a><a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.15em; color: rgb(29, 94, 2)">多线程</a><a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 1.15em; color: rgb(187, 38, 87)">面经</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">26</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">44</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-20T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">42.7k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-03T14:27:19.571Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><div id="runtime"></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="60198" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false" data-theme="transparent" data-lrctype="2"> </div><script async src="/js/diytitle.js"></script><script async src="/js/footerTime.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E5%8F%B3%E5%80%BC%E5%BC%95%E7%94%A8/" style="font-size: 1.15em; color: rgb(195, 76, 179)">右值引用</a><a href="/tags/Linux/" style="font-size: 1.3em; color: rgb(143, 173, 59)">Linux</a><a href="/tags/Python/" style="font-size: 1.45em; color: rgb(181, 149, 39)">Python</a><a href="/tags/Markdown/" style="font-size: 1.15em; color: rgb(12, 73, 160)">Markdown</a><a href="/tags/STL/" style="font-size: 1.3em; color: rgb(92, 164, 51)">STL</a><a href="/tags/IO%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8/" style="font-size: 1.15em; color: rgb(45, 195, 75)">IO多路复用</a><a href="/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/" style="font-size: 1.15em; color: rgb(68, 63, 45)">个人感悟</a><a href="/tags/Java/" style="font-size: 1.3em; color: rgb(166, 129, 61)">Java</a><a href="/tags/LeetCode100/" style="font-size: 1.3em; color: rgb(147, 118, 127)">LeetCode100</a><a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" style="font-size: 1.15em; color: rgb(57, 87, 49)">哈希表</a><a href="/tags/%E5%89%8D%E7%BC%80%E6%A0%91/" style="font-size: 1.15em; color: rgb(71, 107, 176)">前缀树</a><a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" style="font-size: 1.15em; color: rgb(177, 171, 198)">字典树</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 1.15em; color: rgb(58, 177, 199)">数据结构</a><a href="/tags/C/" style="font-size: 1.15em; color: rgb(53, 33, 102)">C++</a><a href="/tags/%E5%8D%95%E8%B0%83%E6%A0%88/" style="font-size: 1.15em; color: rgb(39, 33, 94)">单调栈</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 1.3em; color: rgb(162, 158, 10)">数据结构与算法</a><a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" style="font-size: 1.15em; color: rgb(6, 82, 69)">代码随想录</a><a href="/tags/%E5%88%B7%E9%A2%98/" style="font-size: 1.15em; color: rgb(128, 124, 124)">刷题</a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(74, 52, 109)">数据结构算法</a><a href="/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" style="font-size: 1.15em; color: rgb(23, 179, 131)">滑动窗口</a><a href="/tags/%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88/" style="font-size: 1.15em; color: rgb(147, 60, 7)">哈希集合</a><a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.15em; color: rgb(36, 161, 14)">多线程</a><a href="/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 1.15em; color: rgb(183, 21, 130)">面经</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">18</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">26</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">58</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2023-05-20T00:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">50.5k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-07-09T14:43:44.176Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><div id="runtime"></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="60198" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false" data-theme="transparent" data-lrctype="2"> </div><script async src="/js/diytitle.js"></script><script async src="/js/footerTime.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
 
 var pjax = new Pjax({
   elements: 'a:not([target="_blank"])',

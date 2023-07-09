@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Python数据容器 | Felix's Footprint</title><meta name="author" content="Felix"><meta name="copyright" content="Felix"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="列表空列表定义变量名称 &#x3D; []变量名称 &#x3D; list() 反向索引name_list &#x3D; [&quot;Tom&quot;, &quot;Lily&quot;, &quot;Rose&quot;]print(name_list[-1])  # Roseprint(name_list[-2])  # Lilyprint(name_list[-3])  # Tom 查询下标name_list &#x3D; [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python数据容器">
+<meta property="og:url" content="https://www.felixshen.top/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/index.html">
+<meta property="og:site_name" content="Felix&#39;s Footprint">
+<meta property="og:description" content="列表空列表定义变量名称 &#x3D; []变量名称 &#x3D; list() 反向索引name_list &#x3D; [&quot;Tom&quot;, &quot;Lily&quot;, &quot;Rose&quot;]print(name_list[-1])  # Roseprint(name_list[-2])  # Lilyprint(name_list[-3])  # Tom 查询下标name_list &#x3D; [">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.felixshen.top/img/cover4.jpg">
+<meta property="article:published_time" content="2023-07-08T10:59:16.000Z">
+<meta property="article:modified_time" content="2023-07-09T07:51:04.990Z">
+<meta property="article:author" content="Felix">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.felixshen.top/img/cover4.jpg"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305241151839.png"><link rel="canonical" href="https://www.felixshen.top/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Felix","link":"链接: ","source":"来源: Felix's Footprint","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Python数据容器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-09 15:51:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4082146_34cixruws56.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Felix's Footprint"><span class="site-name">Felix's Footprint</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 链接</span></a></div></div><div id="nav-right"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Python数据容器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-08T10:59:16.000Z" title="发表于 2023-07-08 18:59:16">2023-07-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-09T07:51:04.990Z" title="更新于 2023-07-09 15:51:04">2023-07-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Python数据容器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="空列表定义"><a href="#空列表定义" class="headerlink" title="空列表定义"></a>空列表定义</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名称 = []</span><br><span class="line">变量名称 = <span class="built_in">list</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="反向索引"><a href="#反向索引" class="headerlink" title="反向索引"></a>反向索引</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">1</span>])  <span class="comment"># Rose</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">2</span>])  <span class="comment"># Lily</span></span><br><span class="line"><span class="built_in">print</span>(name_list[-<span class="number">3</span>])  <span class="comment"># Tom</span></span><br></pre></td></tr></table></figure>
+<h3 id="查询下标"><a href="#查询下标" class="headerlink" title="查询下标"></a>查询下标</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.index(<span class="string">&quot;t&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>查找指定元素在列表的下标，如果找不到，报错ValueError。</p>
+<h3 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.<span class="built_in">insert</span>(<span class="number">1</span>,<span class="string">&quot;Jack&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+<h3 id="追加元素1"><a href="#追加元素1" class="headerlink" title="追加元素1"></a>追加元素1</h3><p>将指定元素，追加列表的尾部</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.append(<span class="string">&quot;Jerry&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(name_list) <span class="comment"># [&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, &#x27;Jerry&#x27;]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.append([<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(name_list) <span class="comment"># [&#x27;Tom&#x27;, &#x27;Lily&#x27;, &#x27;Rose&#x27;, [&#x27;a&#x27;, &#x27;b&#x27;]]</span></span><br></pre></td></tr></table></figure>
+<h3 id="追加元素2"><a href="#追加元素2" class="headerlink" title="追加元素2"></a>追加元素2</h3><p>将其他数据容器的内容取出，依次追加到列表尾部</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.extend([<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><ol>
+<li>del 列表[下标]</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line"><span class="keyword">del</span> name_list[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>列表.pop(下标)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">name_list = [<span class="string">&quot;Tom&quot;</span>, <span class="string">&quot;Lily&quot;</span>, <span class="string">&quot;Rose&quot;</span>]</span><br><span class="line">name_list.<span class="comment">##pop(0)</span></span><br><span class="line"><span class="built_in">print</span>(name_list)</span><br></pre></td></tr></table></figure>
+<h3 id="删除列表中的第一个匹配项"><a href="#删除列表中的第一个匹配项" class="headerlink" title="删除列表中的第一个匹配项"></a>删除列表中的第一个匹配项</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">my_list.remove(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(my_list)  <span class="comment"># 结果 [1,3,2]</span></span><br></pre></td></tr></table></figure>
+<h3 id="清空列表内容"><a href="#清空列表内容" class="headerlink" title="清空列表内容"></a>清空列表内容</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">my_list.clear()</span><br><span class="line"><span class="built_in">print</span>(my_list)  <span class="comment"># 结果 []</span></span><br></pre></td></tr></table></figure>
+<h3 id="统计某元素在列表内的数量"><a href="#统计某元素在列表内的数量" class="headerlink" title="统计某元素在列表内的数量"></a>统计某元素在列表内的数量</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(my_list.count(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="统计个数"><a href="#统计个数" class="headerlink" title="统计个数"></a>统计个数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(my_list))</span><br></pre></td></tr></table></figure>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><h3 id="定义空元组"><a href="#定义空元组" class="headerlink" title="定义空元组"></a>定义空元组</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名称=()</span><br><span class="line">变量名称=<span class="built_in">tuple</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="相关操作"><a href="#相关操作" class="headerlink" title="相关操作"></a>相关操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index()</td>
+<td>查找下标，不存在报错</td>
+</tr>
+<tr>
+<td>count()</td>
+<td>统计 某个数据出现个数</td>
+</tr>
+<tr>
+<td>len(元组)</td>
+<td>统计元组内的元素个数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
+<li><p>不可以修改元组的内容，否则会直接报错</p>
+</li>
+<li><p>可以修改元素内list的内容(修改元素、增加、删除、反转等)</p>
+</li>
+<li><p>不可以替换list为其他list或其他类型</p>
+</li>
+</ul>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p><code>注意</code>:字符串是一个<code>无法修改</code>的数据容器。</p>
+<p>以下操作均无法完成：</p>
+<ul>
+<li><p>修改指定下标的字符(如：字符串[0]=’a’ ）</p>
+</li>
+<li><p>移除特定下标的字符 (如：del 字符串[0]、字符串.remove()、字符串.pop()等 )</p>
+</li>
+<li><p>追加字符等(如：字符串.append() )</p>
+</li>
+</ul>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index()</td>
+<td>查找下标</td>
+</tr>
+<tr>
+<td>replace(“字符串1”,”字符串2”)</td>
+<td>字符串内的全部：字符串1，替换为字符串2。<code>注意</code>：不是修改字符串本身，而是得到了一个新的字符串。</td>
+</tr>
+<tr>
+<td>split(“ “)</td>
+<td>按照指定的分隔字符串，将字符串划分为多个字符串，并存入列表对象。</td>
+</tr>
+<tr>
+<td>strip()</td>
+<td>去除前后空格</td>
+</tr>
+<tr>
+<td>strip(字符串)</td>
+<td>去前后指定字符串 例: print(“1255521”.strip(“12”)) # 结果 555</td>
+</tr>
+<tr>
+<td>count(字符串)</td>
+<td>字符串的出现次数</td>
+</tr>
+<tr>
+<td>len(字符串)</td>
+<td>字符串长度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>定义：从一个序列中，取出一个子序列。</p>
+<p>序列定义：列表、元组、字符串</p>
+<p><code>语法</code>：序列[开始下标:结束下标:步长]，左闭右开，[开始下标,结束下标)。</p>
+<ul>
+<li><p>开始可以省略，省略从头开始</p>
+</li>
+<li><p>结束可以省略，省略到尾结束</p>
+</li>
+<li><p>步长可以省略，省略步长为1(可以为负数，表示倒序执行)</p>
+</li>
+</ul>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><p>因为要对元素做去重处理，所以无法保证顺序和创建的时候一致。</p>
+<h3 id="定义空集合"><a href="#定义空集合" class="headerlink" title="定义空集合"></a>定义空集合</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">变量名称=<span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>add(元素)</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>remove(元素)</td>
+<td>将指定元素移除</td>
+</tr>
+<tr>
+<td>pop()</td>
+<td>随机去除一个元素，同时集合被修改</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>本身被清空</td>
+</tr>
+<tr>
+<td>集合1.difference(集合2)</td>
+<td>取集合1和集合2的差集，集合1-集合2。集合1不变</td>
+</tr>
+<tr>
+<td>集合1.difference_update(集合2)</td>
+<td>在集合1内，删除和集合2相同的元素。<code>集合1被修改，集合2不变</code></td>
+</tr>
+<tr>
+<td>集合1.intersection(集合2)</td>
+<td>求集合1和集合2的交集</td>
+</tr>
+<tr>
+<td>集合1.union(集合2)</td>
+<td>将集合1和集合2组合成新集合。集合不变</td>
+</tr>
+<tr>
+<td>len(集合)</td>
+<td>统计长度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><h3 id="定义空字典"><a href="#定义空字典" class="headerlink" title="定义空字典"></a>定义空字典</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">my_dict=&#123;&#125;</span><br><span class="line">my_dict=<span class="built_in">dict</span>()</span><br></pre></td></tr></table></figure>
+<h3 id="嵌套字典"><a href="#嵌套字典" class="headerlink" title="嵌套字典"></a>嵌套字典</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">stu_score = &#123;</span><br><span class="line">    <span class="string">&quot;王丽红&quot;</span>: &#123;<span class="string">&quot;语文&quot;</span>: <span class="number">77</span>, <span class="string">&quot;数学&quot;</span>: <span class="number">66</span>, <span class="string">&quot;英语&quot;</span>: <span class="number">55</span>&#125;,</span><br><span class="line">    <span class="string">&quot;周杰轮&quot;</span>: &#123;<span class="string">&quot;语文&quot;</span>: <span class="number">88</span>, <span class="string">&quot;数学&quot;</span>: <span class="number">99</span>, <span class="string">&quot;英语&quot;</span>: <span class="number">33</span>&#125;,</span><br><span class="line">    <span class="string">&quot;林军阶&quot;</span>: &#123;<span class="string">&quot;语文&quot;</span>: <span class="number">99</span>, <span class="string">&quot;数学&quot;</span>: <span class="number">88</span>, <span class="string">&quot;英语&quot;</span>: <span class="number">77</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">print</span>(stu_score[<span class="string">&quot;王丽红&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(stu_score[<span class="string">&quot;王丽红&quot;</span>][<span class="string">&quot;语文&quot;</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="常用操作-2"><a href="#常用操作-2" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字典[key]=val</td>
+<td>新增元素</td>
+</tr>
+<tr>
+<td>字典[key]=val</td>
+<td>更新元素</td>
+</tr>
+<tr>
+<td>字典.pop(key)</td>
+<td>删除元素</td>
+</tr>
+<tr>
+<td>字典.clear()</td>
+<td>元素被清空</td>
+</tr>
+<tr>
+<td>字典.keys()</td>
+<td>得到全部key</td>
+</tr>
+<tr>
+<td>len(字典)</td>
+<td>求全部的键值对</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数据的通用统计功能"><a href="#数据的通用统计功能" class="headerlink" title="数据的通用统计功能"></a>数据的通用统计功能</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>len(容器)</td>
+<td>长度</td>
+</tr>
+<tr>
+<td>max(容器)</td>
+<td>统计最大元素</td>
+</tr>
+<tr>
+<td>list(容器)</td>
+<td>转换为列表</td>
+</tr>
+<tr>
+<td>str(容器)</td>
+<td>转换为字符串</td>
+</tr>
+<tr>
+<td>tuple(容器)</td>
+<td>转换为元组</td>
+</tr>
+<tr>
+<td>set(容器)</td>
+<td>转换为集合</td>
+</tr>
+<tr>
+<td>sorted(容器,[reverse=True])</td>
+<td>将给定容器进行排序，<code>返回一个新的序列</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://www.felixshen.top">Felix</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.felixshen.top/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/">https://www.felixshen.top/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.felixshen.top" target="_blank">Felix's Footprint</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a></div><div class="post_share"><div class="social-share" data-image="/img/cover4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作"><img class="cover" src="/img/cover1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">文件操作</div></div></a></div><div class="next-post pull-right"><a href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数"><img class="cover" src="/img/cover7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python函数</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/08/Python-%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/" title="Python 格式化输出"><img class="cover" src="/img/cover9.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-08</div><div class="title">Python 格式化输出</div></div></a></div><div><a href="/2023/07/08/Python-%E8%BF%90%E7%AE%97%E7%AC%A6/" title="Python-运算符"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-08</div><div class="title">Python-运算符</div></div></a></div><div><a href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数"><img class="cover" src="/img/cover7.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-08</div><div class="title">Python函数</div></div></a></div><div><a href="/2023/07/09/Python%E5%BC%82%E5%B8%B8/" title="Python异常"><img class="cover" src="/img/cover8.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-09</div><div class="title">Python异常</div></div></a></div><div><a href="/2023/07/09/Python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="Python模块和包"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-09</div><div class="title">Python模块和包</div></div></a></div><div><a href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作"><img class="cover" src="/img/cover1.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-09</div><div class="title">文件操作</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81ODQ4My8zNDk0Ng=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/FelixShenBlog/Picture/img/202305221617001.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Felix</div><div class="author-info__description">但行好事，莫问前程。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">58</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/felixshenblog"><i></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/FelixShenBlog" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:hubery123698745@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>鸡汤</span></div><div class="announcement_content">You got a dream, you got to protect it.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E5%88%97%E8%A1%A8%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">空列表定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E7%B4%A2%E5%BC%95"><span class="toc-number">1.2.</span> <span class="toc-text">反向索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E4%B8%8B%E6%A0%87"><span class="toc-number">1.3.</span> <span class="toc-text">查询下标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0"><span class="toc-number">1.4.</span> <span class="toc-text">插入元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E5%8A%A0%E5%85%83%E7%B4%A01"><span class="toc-number">1.5.</span> <span class="toc-text">追加元素1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E5%8A%A0%E5%85%83%E7%B4%A02"><span class="toc-number">1.6.</span> <span class="toc-text">追加元素2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">1.7.</span> <span class="toc-text">删除元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%88%97%E8%A1%A8%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8C%B9%E9%85%8D%E9%A1%B9"><span class="toc-number">1.8.</span> <span class="toc-text">删除列表中的第一个匹配项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E7%A9%BA%E5%88%97%E8%A1%A8%E5%86%85%E5%AE%B9"><span class="toc-number">1.9.</span> <span class="toc-text">清空列表内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%9F%90%E5%85%83%E7%B4%A0%E5%9C%A8%E5%88%97%E8%A1%A8%E5%86%85%E7%9A%84%E6%95%B0%E9%87%8F"><span class="toc-number">1.10.</span> <span class="toc-text">统计某元素在列表内的数量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E4%B8%AA%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">统计个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text">元组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%A9%BA%E5%85%83%E7%BB%84"><span class="toc-number">3.1.</span> <span class="toc-text">定义空元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">3.2.</span> <span class="toc-text">相关操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">3.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">4.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-number">4.1.</span> <span class="toc-text">常用操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E7%89%87"><span class="toc-number">5.</span> <span class="toc-text">切片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">6.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%A9%BA%E9%9B%86%E5%90%88"><span class="toc-number">6.1.</span> <span class="toc-text">定义空集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-1"><span class="toc-number">6.2.</span> <span class="toc-text">常用操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-number">7.</span> <span class="toc-text">字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%A9%BA%E5%AD%97%E5%85%B8"><span class="toc-number">7.1.</span> <span class="toc-text">定义空字典</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%A5%97%E5%AD%97%E5%85%B8"><span class="toc-number">7.2.</span> <span class="toc-text">嵌套字典</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-2"><span class="toc-number">7.3.</span> <span class="toc-text">常用操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E9%80%9A%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD"><span class="toc-number">8.</span> <span class="toc-text">数据的通用统计功能</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/Python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="Python模块和包"><img src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python模块和包"/></a><div class="content"><a class="title" href="/2023/07/09/Python%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="Python模块和包">Python模块和包</a><time datetime="2023-07-09T12:23:29.000Z" title="发表于 2023-07-09 20:23:29">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/Python%E5%BC%82%E5%B8%B8/" title="Python异常"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python异常"/></a><div class="content"><a class="title" href="/2023/07/09/Python%E5%BC%82%E5%B8%B8/" title="Python异常">Python异常</a><time datetime="2023-07-09T08:45:20.000Z" title="发表于 2023-07-09 16:45:20">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="文件操作"/></a><div class="content"><a class="title" href="/2023/07/09/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="文件操作">文件操作</a><time datetime="2023-07-09T07:51:34.000Z" title="发表于 2023-07-09 15:51:34">2023-07-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python数据容器"><img src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python数据容器"/></a><div class="content"><a class="title" href="/2023/07/08/Python%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8/" title="Python数据容器">Python数据容器</a><time datetime="2023-07-08T10:59:16.000Z" title="发表于 2023-07-08 18:59:16">2023-07-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python函数"/></a><div class="content"><a class="title" href="/2023/07/08/Python%E5%87%BD%E6%95%B0/" title="Python函数">Python函数</a><time datetime="2023-07-08T09:14:50.000Z" title="发表于 2023-07-08 17:14:50">2023-07-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="footer_custom_text"><div id="runtime"></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="60198" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false" data-theme="transparent" data-lrctype="2"> </div><script async src="/js/diytitle.js"></script><script async src="/js/footerTime.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '0s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('pagination');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__backInUp');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
