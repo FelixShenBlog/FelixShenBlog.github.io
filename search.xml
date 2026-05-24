@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>BCD码</title>
+    <url>/2022/09/08/BCD%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>BCD：Binary-Coded Decimal，用二进制编码的十进制</p>
+<p>作用：为了解决二进制数转十进制数的麻烦</p>
+<h3 id="8421码"><a href="#8421码" class="headerlink" title="8421码"></a>8421码</h3><p>用4bit表示十进制数，有6种冗余</p>
+<p>如果两个数相加结果处于1010~10010，则结果再加上6才能得到正确结果</p>
+<p>如果相加结果在合法范围内，则无需修改</p>
+<h3 id="余三码"><a href="#余三码" class="headerlink" title="余三码"></a>余三码</h3><p>8421+(0011)</p>
+<h3 id="2421码-改变每一位的权值"><a href="#2421码-改变每一位的权值" class="headerlink" title="2421码(改变每一位的权值)"></a>2421码(改变每一位的权值)</h3><p>0-4 的第一位是0，5-9的第一位是1</p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cache-主存映射方式</title>
     <url>/2022/09/15/Cache-%E4%B8%BB%E5%AD%98%E6%98%A0%E5%B0%84%E6%96%B9%E5%BC%8F/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h3><p><img src="/%5Cimages%5C2022-09-15-15-21-50-image.png"></p>
@@ -24,39 +46,17 @@
       </tags>
   </entry>
   <entry>
-    <title>BCD码</title>
-    <url>/2022/09/08/BCD%E7%A0%81/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>BCD：Binary-Coded Decimal，用二进制编码的十进制</p>
-<p>作用：为了解决二进制数转十进制数的麻烦</p>
-<h3 id="8421码"><a href="#8421码" class="headerlink" title="8421码"></a>8421码</h3><p>用4bit表示十进制数，有6种冗余</p>
-<p>如果两个数相加结果处于1010~10010，则结果再加上6才能得到正确结果</p>
-<p>如果相加结果在合法范围内，则无需修改</p>
-<h3 id="余三码"><a href="#余三码" class="headerlink" title="余三码"></a>余三码</h3><p>8421+(0011)</p>
-<h3 id="2421码-改变每一位的权值"><a href="#2421码-改变每一位的权值" class="headerlink" title="2421码(改变每一位的权值)"></a>2421码(改变每一位的权值)</h3><p>0-4 的第一位是0，5-9的第一位是1</p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cache基本原理</title>
-    <url>/2022/09/15/Cache%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="存储系统存在的问题"><a href="#存储系统存在的问题" class="headerlink" title="存储系统存在的问题"></a>存储系统存在的问题</h3><p><img src="/%5Cimages%5C2022-09-15-14-45-36-image.png"></p>
+    <title>Cache替换算法</title>
+    <url>/2022/09/15/Cache%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="替换算法解决的问题"><a href="#替换算法解决的问题" class="headerlink" title="替换算法解决的问题"></a>替换算法解决的问题</h3><p><img src="/%5Cimages%5C2022-09-15-15-29-34-image.png"></p>
 <span id="more"></span>
 
-<h3 id="Cache的工作原理"><a href="#Cache的工作原理" class="headerlink" title="Cache的工作原理"></a>Cache的工作原理</h3><p><img src="/%5Cimages%5C2022-09-15-14-46-10-image.png"></p>
-<h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h3><p><img src="/%5Cimages%5C2022-09-15-14-46-41-image.png"></p>
-<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><p><img src="/%5Cimages%5C2022-09-15-14-47-13-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-14-47-27-image.png"></p>
-<h3 id="主存分块"><a href="#主存分块" class="headerlink" title="主存分块"></a>主存分块</h3><p><img src="/%5Cimages%5C2022-09-15-14-48-46-image.png"></p>
-<h3 id="三个问题"><a href="#三个问题" class="headerlink" title="三个问题"></a>三个问题</h3><p><img src="/%5Cimages%5C2022-09-15-14-49-34-image.png"></p>
+<h3 id="随机算法"><a href="#随机算法" class="headerlink" title="随机算法"></a>随机算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-29-58-image.png"></p>
+<h3 id="先进先出算法"><a href="#先进先出算法" class="headerlink" title="先进先出算法"></a>先进先出算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-31-34-image.png"></p>
+<h3 id="近期最少使用算法"><a href="#近期最少使用算法" class="headerlink" title="近期最少使用算法"></a>近期最少使用算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-41-36-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-15-41-53-image.png"></p>
+<h3 id="最不经常使用算法"><a href="#最不经常使用算法" class="headerlink" title="最不经常使用算法"></a>最不经常使用算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-45-10-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-15-46-20-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -87,33 +87,17 @@
       </categories>
   </entry>
   <entry>
-    <title>C语言类型转换</title>
-    <url>/2022/09/10/C%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5CC%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Cache替换算法</title>
-    <url>/2022/09/15/Cache%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="替换算法解决的问题"><a href="#替换算法解决的问题" class="headerlink" title="替换算法解决的问题"></a>替换算法解决的问题</h3><p><img src="/%5Cimages%5C2022-09-15-15-29-34-image.png"></p>
+    <title>Cache基本原理</title>
+    <url>/2022/09/15/Cache%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="存储系统存在的问题"><a href="#存储系统存在的问题" class="headerlink" title="存储系统存在的问题"></a>存储系统存在的问题</h3><p><img src="/%5Cimages%5C2022-09-15-14-45-36-image.png"></p>
 <span id="more"></span>
 
-<h3 id="随机算法"><a href="#随机算法" class="headerlink" title="随机算法"></a>随机算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-29-58-image.png"></p>
-<h3 id="先进先出算法"><a href="#先进先出算法" class="headerlink" title="先进先出算法"></a>先进先出算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-31-34-image.png"></p>
-<h3 id="近期最少使用算法"><a href="#近期最少使用算法" class="headerlink" title="近期最少使用算法"></a>近期最少使用算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-41-36-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-15-41-53-image.png"></p>
-<h3 id="最不经常使用算法"><a href="#最不经常使用算法" class="headerlink" title="最不经常使用算法"></a>最不经常使用算法</h3><p><img src="/%5Cimages%5C2022-09-15-15-45-10-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-15-46-20-image.png"></p>
+<h3 id="Cache的工作原理"><a href="#Cache的工作原理" class="headerlink" title="Cache的工作原理"></a>Cache的工作原理</h3><p><img src="/%5Cimages%5C2022-09-15-14-46-10-image.png"></p>
+<h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h3><p><img src="/%5Cimages%5C2022-09-15-14-46-41-image.png"></p>
+<h3 id="性能分析"><a href="#性能分析" class="headerlink" title="性能分析"></a>性能分析</h3><p><img src="/%5Cimages%5C2022-09-15-14-47-13-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-14-47-27-image.png"></p>
+<h3 id="主存分块"><a href="#主存分块" class="headerlink" title="主存分块"></a>主存分块</h3><p><img src="/%5Cimages%5C2022-09-15-14-48-46-image.png"></p>
+<h3 id="三个问题"><a href="#三个问题" class="headerlink" title="三个问题"></a>三个问题</h3><p><img src="/%5Cimages%5C2022-09-15-14-49-34-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -139,6 +123,22 @@
 ]]></content>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C语言类型转换</title>
+    <url>/2022/09/10/C%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5CC%E8%AF%AD%E8%A8%80%E8%BD%AC%E6%8D%A2.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
       </tags>
   </entry>
   <entry>
@@ -299,6 +299,26 @@
       </tags>
   </entry>
   <entry>
+    <title>Python-运算符</title>
+    <url>/2023/07/08/Python-%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p><code>/</code>: 除法，用于将一个值除以另一个值，结果为浮点数。</p>
+<p><code>//</code>: 整除，用于将一个值除以另一个值，结果为整数(向下取整)。</p>
+<p><code>**</code>: 幂运算，用于将一个值的指数幂。<code>2**3</code>表示<code>2的3次方</code></p>
+<h2 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h2><p><code>in</code>：如果指定的值在序列中存在，则返回 True。</p>
+<p><code>not in</code>：如果指定的值在序列中不存在，则返回 True。</p>
+<h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><p><code>is</code>：如果两个变量引用同一个对象，则返回 True。</p>
+<p><code>is not</code>：如果两个变量引用的不是同一个对象，则返回 True。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x == y)   <span class="comment"># True，x 和 y 的值相等</span></span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> y)   <span class="comment"># False，x 和 y 引用不同的对象</span></span><br></pre></td></tr></table></figure>
+
+<p>即使两个对象的值相等，但它们可能是不同的对象。在Python中，对象的身份是由对象在<code>内存中的地址</code>表示的，而对象的值是对象所包含的数据。当我们使用 <code>is</code> 运算符时，它比较的是对象的身份，而不仅仅是对象的值。</p>
+<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p><code>&lt;&lt;</code>：左移，将一个数的二进制表示向左移动指定的位数。</p>
+<p><code>&gt;&gt;</code>：右移，将一个数的二进制表示向右移动指定的位数。</p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SRAM和DRAM</title>
     <url>/2022/09/12/SRAM%E5%92%8CDRAM/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="栅极电容vs双稳态触发器"><a href="#栅极电容vs双稳态触发器" class="headerlink" title="栅极电容vs双稳态触发器"></a>栅极电容vs双稳态触发器</h3><p> <code>DRAM用于主存，SRAM用于Cache</code></p>
@@ -322,26 +342,6 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第三章 存储系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python-运算符</title>
-    <url>/2023/07/08/Python-%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p><code>/</code>: 除法，用于将一个值除以另一个值，结果为浮点数。</p>
-<p><code>//</code>: 整除，用于将一个值除以另一个值，结果为整数(向下取整)。</p>
-<p><code>**</code>: 幂运算，用于将一个值的指数幂。<code>2**3</code>表示<code>2的3次方</code></p>
-<h2 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h2><p><code>in</code>：如果指定的值在序列中存在，则返回 True。</p>
-<p><code>not in</code>：如果指定的值在序列中不存在，则返回 True。</p>
-<h2 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h2><p><code>is</code>：如果两个变量引用同一个对象，则返回 True。</p>
-<p><code>is not</code>：如果两个变量引用的不是同一个对象，则返回 True。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x == y)   <span class="comment"># True，x 和 y 的值相等</span></span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> y)   <span class="comment"># False，x 和 y 引用不同的对象</span></span><br></pre></td></tr></table></figure>
-
-<p>即使两个对象的值相等，但它们可能是不同的对象。在Python中，对象的身份是由对象在<code>内存中的地址</code>表示的，而对象的值是对象所包含的数据。当我们使用 <code>is</code> 运算符时，它比较的是对象的身份，而不仅仅是对象的值。</p>
-<h2 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h2><p><code>&lt;&lt;</code>：左移，将一个数的二进制表示向左移动指定的位数。</p>
-<p><code>&gt;&gt;</code>：右移，将一个数的二进制表示向右移动指定的位数。</p>
-]]></content>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -384,6 +384,32 @@
         <tag>Java</tag>
         <tag>LeetCode100</tag>
         <tag>哈希表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>主存储器的基本组成</title>
+    <url>/2022/09/12/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="基本的半导体元件及原理"><a href="#基本的半导体元件及原理" class="headerlink" title="基本的半导体元件及原理"></a>基本的半导体元件及原理</h3><p><code>MOS管:半导体元器件</code></p>
+<p><img src="/%5Cimages%5C2022-09-12-18-00-49-image.png"></p>
+<span id="more"></span>
+
+<!--more-->
+
+<h3 id="存储器芯片的基本原理"><a href="#存储器芯片的基本原理" class="headerlink" title="存储器芯片的基本原理"></a>存储器芯片的基本原理</h3><p><code>片选线：芯片选择线</code></p>
+<p><code>引脚：每根线对应一个引脚</code></p>
+<p><img src="/%5Cimages%5C2022-09-12-18-06-42-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-12-18-07-28-image.png"></p>
+<h3 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h3><p><img src="/%5Cimages%5C2022-09-12-18-08-03-image.png"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第三章 存储系统</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第三章 存储系统</tag>
       </tags>
   </entry>
   <entry>
@@ -444,61 +470,9 @@
       </tags>
   </entry>
   <entry>
-    <title>主存储器的基本组成</title>
-    <url>/2022/09/12/%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="基本的半导体元件及原理"><a href="#基本的半导体元件及原理" class="headerlink" title="基本的半导体元件及原理"></a>基本的半导体元件及原理</h3><p><code>MOS管:半导体元器件</code></p>
-<p><img src="/%5Cimages%5C2022-09-12-18-00-49-image.png"></p>
-<span id="more"></span>
-
-<!--more-->
-
-<h3 id="存储器芯片的基本原理"><a href="#存储器芯片的基本原理" class="headerlink" title="存储器芯片的基本原理"></a>存储器芯片的基本原理</h3><p><code>片选线：芯片选择线</code></p>
-<p><code>引脚：每根线对应一个引脚</code></p>
-<p><img src="/%5Cimages%5C2022-09-12-18-06-42-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-12-18-07-28-image.png"></p>
-<h3 id="寻址"><a href="#寻址" class="headerlink" title="寻址"></a>寻址</h3><p><img src="/%5Cimages%5C2022-09-12-18-08-03-image.png"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第三章 存储系统</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第三章 存储系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>养龙虾记录</title>
-    <url>/2026/05/24/%E5%85%BB%E9%BE%99%E8%99%BE%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="安装龙虾"><a href="#安装龙虾" class="headerlink" title="安装龙虾"></a>安装龙虾</h2><p>1.打开终端，安装wsl(这一步骤一般会默认安装ubuntu)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
-
-<p>2.如果没有安装ubuntu，继续使用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl --install ubuntu-24.04</span><br></pre></td></tr></table></figure>
-
-<p>3.安装完成后设置用户名和密码</p>
-<p>4.以上步骤完成后，后续进入wsl可以用以下命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wsl -d ubuntu</span><br></pre></td></tr></table></figure>
-
-<p>5.安装小龙虾</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fssL https://openclaw.ai/install.sh | bash</span><br></pre></td></tr></table></figure>
-
-<p>6.选择快速开始，可以跳过的配置尽量跳过，保证小龙虾先运行</p>
-<p>7.下次再打开小龙虾，运行以下命令，然后再浏览器粘贴url</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">openclaw dashboard --no-open</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>原码的乘法运算</title>
-    <url>/2022/09/09/%E5%8E%9F%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%954.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%956.jpg"></p>
-<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%957.jpg"></p>
+    <title>原反补码的特性对比</title>
+    <url>/2022/09/08/%E5%8E%9F%E5%8F%8D%E8%A1%A5%E7%A0%81%E7%9A%84%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E6%AF%94%E8%BE%83.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -512,9 +486,14 @@
       </tags>
   </entry>
   <entry>
-    <title>原反补码的特性对比</title>
-    <url>/2022/09/08/%E5%8E%9F%E5%8F%8D%E8%A1%A5%E7%A0%81%E7%9A%84%E7%89%B9%E6%80%A7%E5%AF%B9%E6%AF%94/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E6%AF%94%E8%BE%83.jpg"></p>
+    <title>原码的乘法运算</title>
+    <url>/2022/09/09/%E5%8E%9F%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h3><p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%954.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%956.jpg"></p>
+<p><img src="/%5Cimages%5C%E5%8E%9F%E7%A0%81%E4%B9%98%E6%B3%957.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -552,6 +531,27 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>双端口RAM和多模块存储器</title>
+    <url>/2022/09/13/%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h3><p><img src="/%5Cimages%5C2022-09-15-15-00-01-image.png"></p>
+<span id="more"></span>
+
+<h3 id="双端口RAM"><a href="#双端口RAM" class="headerlink" title="双端口RAM"></a>双端口RAM</h3><p><img src="/%5Cimages%5C2022-09-15-15-00-37-image.png"></p>
+<h3 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h3><p><img src="/%5Cimages%5C2022-09-15-15-02-10-image.png"></p>
+<h3 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h3><p><img src="/%5Cimages%5C2022-09-15-15-19-13-image.png"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第三章 存储系统</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第三章 存储系统</tag>
       </tags>
   </entry>
   <entry>
@@ -644,14 +644,13 @@
       </tags>
   </entry>
   <entry>
-    <title>双端口RAM和多模块存储器</title>
-    <url>/2022/09/13/%E5%8F%8C%E7%AB%AF%E5%8F%A3RAM%E5%92%8C%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h3><p><img src="/%5Cimages%5C2022-09-15-15-00-01-image.png"></p>
+    <title>固态硬盘</title>
+    <url>/2022/09/15/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h3><p><img src="/%5Cimages%5C2022-09-15-14-56-53-image.png"></p>
 <span id="more"></span>
 
-<h3 id="双端口RAM"><a href="#双端口RAM" class="headerlink" title="双端口RAM"></a>双端口RAM</h3><p><img src="/%5Cimages%5C2022-09-15-15-00-37-image.png"></p>
-<h3 id="多体并行存储器"><a href="#多体并行存储器" class="headerlink" title="多体并行存储器"></a>多体并行存储器</h3><p><img src="/%5Cimages%5C2022-09-15-15-02-10-image.png"></p>
-<h3 id="单体多字存储器"><a href="#单体多字存储器" class="headerlink" title="单体多字存储器"></a>单体多字存储器</h3><p><img src="/%5Cimages%5C2022-09-15-15-19-13-image.png"></p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p><img src="/%5Cimages%5C2022-09-15-13-27-01-image.png"></p>
+<h3 id="固态硬盘的寿命"><a href="#固态硬盘的寿命" class="headerlink" title="固态硬盘的寿命"></a>固态硬盘的寿命</h3><p><img src="/%5Cimages%5C2022-09-15-13-28-16-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -665,13 +664,16 @@
       </tags>
   </entry>
   <entry>
-    <title>固态硬盘</title>
-    <url>/2022/09/15/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h3><p><img src="/%5Cimages%5C2022-09-15-14-56-53-image.png"></p>
+    <title>存储系统基本概念</title>
+    <url>/2022/09/12/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="存储器的层次化结构"><a href="#存储器的层次化结构" class="headerlink" title="存储器的层次化结构"></a>存储器的层次化结构</h2><p><img src="/%5Cimages%5C2022-09-12-16-57-01-image.png"></p>
 <span id="more"></span>
 
-<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p><img src="/%5Cimages%5C2022-09-15-13-27-01-image.png"></p>
-<h3 id="固态硬盘的寿命"><a href="#固态硬盘的寿命" class="headerlink" title="固态硬盘的寿命"></a>固态硬盘的寿命</h3><p><img src="/%5Cimages%5C2022-09-15-13-28-16-image.png"></p>
+<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="存储介质"><a href="#存储介质" class="headerlink" title="存储介质"></a>存储介质</h3><p><img src="/%5Cimages%5C2022-09-12-17-30-42-image.png"></p>
+<h3 id="存取方式"><a href="#存取方式" class="headerlink" title="存取方式"></a>存取方式</h3><p><img src="/%5Cimages%5C2022-09-12-17-31-27-image.png"></p>
+<h3 id="信息的可更改性"><a href="#信息的可更改性" class="headerlink" title="信息的可更改性"></a>信息的可更改性</h3><p><img src="/%5Cimages%5C2022-09-12-17-32-17-image.png"></p>
+<h3 id="信息的可保存性"><a href="#信息的可保存性" class="headerlink" title="信息的可保存性"></a>信息的可保存性</h3><p><img src="/%5Cimages%5C2022-09-12-17-32-58-image.png"></p>
+<h2 id="存储器的性能指标"><a href="#存储器的性能指标" class="headerlink" title="存储器的性能指标"></a>存储器的性能指标</h2><p><img src="/%5Cimages%5C2022-09-12-17-33-28-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -703,29 +705,6 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>存储系统基本概念</title>
-    <url>/2022/09/12/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="存储器的层次化结构"><a href="#存储器的层次化结构" class="headerlink" title="存储器的层次化结构"></a>存储器的层次化结构</h2><p><img src="/%5Cimages%5C2022-09-12-16-57-01-image.png"></p>
-<span id="more"></span>
-
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><h3 id="存储介质"><a href="#存储介质" class="headerlink" title="存储介质"></a>存储介质</h3><p><img src="/%5Cimages%5C2022-09-12-17-30-42-image.png"></p>
-<h3 id="存取方式"><a href="#存取方式" class="headerlink" title="存取方式"></a>存取方式</h3><p><img src="/%5Cimages%5C2022-09-12-17-31-27-image.png"></p>
-<h3 id="信息的可更改性"><a href="#信息的可更改性" class="headerlink" title="信息的可更改性"></a>信息的可更改性</h3><p><img src="/%5Cimages%5C2022-09-12-17-32-17-image.png"></p>
-<h3 id="信息的可保存性"><a href="#信息的可保存性" class="headerlink" title="信息的可保存性"></a>信息的可保存性</h3><p><img src="/%5Cimages%5C2022-09-12-17-32-58-image.png"></p>
-<h2 id="存储器的性能指标"><a href="#存储器的性能指标" class="headerlink" title="存储器的性能指标"></a>存储器的性能指标</h2><p><img src="/%5Cimages%5C2022-09-12-17-33-28-image.png"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第三章 存储系统</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第三章 存储系统</tag>
       </tags>
   </entry>
   <entry>
@@ -800,6 +779,26 @@
       </tags>
   </entry>
   <entry>
+    <title>数据的存储和排列</title>
+    <url>/2022/09/10/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="大小端模式"><a href="#大小端模式" class="headerlink" title="大小端模式"></a>大小端模式</h3><p><img src="/images%5C%E5%A4%A7%E5%B0%8F%E7%AB%AF.jpg"></p>
+<span id="more"></span>
+
+<h3 id="边界对齐"><a href="#边界对齐" class="headerlink" title="边界对齐"></a>边界对齐</h3><p><code>假设结构体存了三个char型，三个short型和一个int型</code></p>
+<p><img src="/%5Cimages%5C%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>拓展操作码指令格式</title>
     <url>/2022/09/15/%E6%8B%93%E5%B1%95%E6%93%8D%E4%BD%9C%E7%A0%81%E6%8C%87%E4%BB%A4%E6%A0%BC%E5%BC%8F/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p><img src="/images%5C2022-09-15-17-00-56-image.png"></p>
@@ -849,6 +848,54 @@
       </tags>
   </entry>
   <entry>
+    <title>无符号整数的表示和运算</title>
+    <url>/2022/09/08/%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>无符号整数：0，1，2，3……</p>
+<p><img src="/%5Cimages%5C%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0.jpg"></p>
+<h2 id="无符号整数在硬件内的表示"><a href="#无符号整数在硬件内的表示" class="headerlink" title="无符号整数在硬件内的表示"></a>无符号整数在硬件内的表示</h2><p><img src="/%5Cimages%5C%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA.jpg"></p>
+<h3 id="无符号整数的加法运算"><a href="#无符号整数的加法运算" class="headerlink" title="无符号整数的加法运算"></a>无符号整数的加法运算</h3><p>从最低位开始，按位相加，并往更高位进位</p>
+<h3 id="无符号整数的减法"><a href="#无符号整数的减法" class="headerlink" title="无符号整数的减法"></a>无符号整数的减法</h3><ol>
+<li><p>被减数不变，减数全部按位取反，末位加1，减法变加法</p>
+</li>
+<li><p>从最低位开始，按位相加，并往更高位进位</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>标志位的生成</title>
+    <url>/2022/09/09/%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>OF(Overflow Flag): <code>OF位对无符号数的加减法无意义</code></p>
+<p>SF(Sign Flag): <code>SF位对无符号数的加减法无意义</code></p>
+<p>ZF(Zero Flag): <code>对无符号数和有符号数都有意义</code></p>
+<p>CF(Carry Flag):<code>对有符号数的加减法无意义</code></p>
+<span id="more"></span>
+
+<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%971.jpg"></p>
+<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%972.jpg"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无重复的最长字串</title>
     <url>/2022/06/20/%E6%97%A0%E9%87%8D%E5%A4%8D%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
@@ -882,51 +929,6 @@
       </tags>
   </entry>
   <entry>
-    <title>数据的存储和排列</title>
-    <url>/2022/09/10/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="大小端模式"><a href="#大小端模式" class="headerlink" title="大小端模式"></a>大小端模式</h3><p><img src="/images%5C%E5%A4%A7%E5%B0%8F%E7%AB%AF.jpg"></p>
-<span id="more"></span>
-
-<h3 id="边界对齐"><a href="#边界对齐" class="headerlink" title="边界对齐"></a>边界对齐</h3><p><code>假设结构体存了三个char型，三个short型和一个int型</code></p>
-<p><img src="/%5Cimages%5C%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无符号整数的表示和运算</title>
-    <url>/2022/09/08/%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>无符号整数：0，1，2，3……</p>
-<p><img src="/%5Cimages%5C%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0.jpg"></p>
-<h2 id="无符号整数在硬件内的表示"><a href="#无符号整数在硬件内的表示" class="headerlink" title="无符号整数在硬件内的表示"></a>无符号整数在硬件内的表示</h2><p><img src="/%5Cimages%5C%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA.jpg"></p>
-<h3 id="无符号整数的加法运算"><a href="#无符号整数的加法运算" class="headerlink" title="无符号整数的加法运算"></a>无符号整数的加法运算</h3><p>从最低位开始，按位相加，并往更高位进位</p>
-<h3 id="无符号整数的减法"><a href="#无符号整数的减法" class="headerlink" title="无符号整数的减法"></a>无符号整数的减法</h3><ol>
-<li><p>被减数不变，减数全部按位取反，末位加1，减法变加法</p>
-</li>
-<li><p>从最低位开始，按位相加，并往更高位进位</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>浮点数的表示</title>
     <url>/2022/09/10/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="定点数的局限性"><a href="#定点数的局限性" class="headerlink" title="定点数的局限性"></a>定点数的局限性</h3><p>定点数可表示的数据范围有限，如何在位数不变的情况下增加数据表示范围。</p>
@@ -935,29 +937,6 @@
 <h3 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h3><p><img src="/%5Cimages%5C%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA.jpg"></p>
 <h3 id="浮点数尾数的规格化"><a href="#浮点数尾数的规格化" class="headerlink" title="浮点数尾数的规格化"></a>浮点数尾数的规格化</h3><p><img src="/%5Cimages%5C%E8%A7%84%E6%A0%BC%E5%8C%96.jpg"></p>
 <p><img src="/%5Cimages%5C%E8%A7%84%E6%A0%BC%E5%8C%962.jpg"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标志位的生成</title>
-    <url>/2022/09/09/%E6%A0%87%E5%BF%97%E4%BD%8D%E7%9A%84%E7%94%9F%E6%88%90/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>OF(Overflow Flag): <code>OF位对无符号数的加减法无意义</code></p>
-<p>SF(Sign Flag): <code>SF位对无符号数的加减法无意义</code></p>
-<p>ZF(Zero Flag): <code>对无符号数和有符号数都有意义</code></p>
-<p>CF(Carry Flag):<code>对有符号数的加减法无意义</code></p>
-<span id="more"></span>
-
-<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%971.jpg"></p>
-<p><img src="/%5Cimages%5C%E6%A0%87%E5%BF%972.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1004,14 +983,12 @@
       </tags>
   </entry>
   <entry>
-    <title>移码</title>
-    <url>/2022/09/08/%E7%A7%BB%E7%A0%81/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%811.jpg"></p>
-<span id="more"></span>
-
-<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%812.jpg"></p>
-<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%813.jpg"></p>
-<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%814.jpg"></p>
+    <title>浮点数的运算</title>
+    <url>/2022/09/11/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="十进制的浮点数运算"><a href="#十进制的浮点数运算" class="headerlink" title="十进制的浮点数运算"></a>十进制的浮点数运算</h3><p><img src="/%5Cimages%5C2022-09-12-16-41-58-image.png"></p>
+<h3 id="二进制的浮点数加减"><a href="#二进制的浮点数加减" class="headerlink" title="二进制的浮点数加减"></a>二进制的浮点数加减</h3><p><img src="/%5Cimages%5C2022-09-12-16-45-01-image.png"></p>
+<h3 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h3><p><img src="/%5Cimages%5C2022-09-12-16-50-22-image.png"></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><img src="/%5Cimages%5C2022-09-12-16-51-38-image.png"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1025,12 +1002,47 @@
       </tags>
   </entry>
   <entry>
-    <title>浮点数的运算</title>
-    <url>/2022/09/11/%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h3 id="十进制的浮点数运算"><a href="#十进制的浮点数运算" class="headerlink" title="十进制的浮点数运算"></a>十进制的浮点数运算</h3><p><img src="/%5Cimages%5C2022-09-12-16-41-58-image.png"></p>
-<h3 id="二进制的浮点数加减"><a href="#二进制的浮点数加减" class="headerlink" title="二进制的浮点数加减"></a>二进制的浮点数加减</h3><p><img src="/%5Cimages%5C2022-09-12-16-45-01-image.png"></p>
-<h3 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h3><p><img src="/%5Cimages%5C2022-09-12-16-50-22-image.png"></p>
-<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p><img src="/%5Cimages%5C2022-09-12-16-51-38-image.png"></p>
+    <title>磁盘存储器</title>
+    <url>/2022/09/13/%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="外存储器"><a href="#外存储器" class="headerlink" title="外存储器"></a>外存储器</h2><ul>
+<li><p><code>磁盘存储器：每次写入或读出一比特，不能同时写或读</code></p>
+</li>
+<li><p><code>固态硬盘(SSD)</code></p>
+<span id="more"></span></li>
+</ul>
+<p><img src="/%5Cimages%5C2022-09-15-12-53-21-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-12-55-59-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-12-57-03-image.png"></p>
+<h3 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h3><p><img src="/%5Cimages%5C2022-09-15-12-58-12-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-12-59-45-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-13-00-31-image.png"></p>
+<h3 id="磁盘地址和工作过程"><a href="#磁盘地址和工作过程" class="headerlink" title="磁盘地址和工作过程"></a>磁盘地址和工作过程</h3><p><code>为什么磁盘地址是柱面(磁道)号、盘面号、扇区号顺序?</code></p>
+<p><code>若按盘面号，柱面(磁道)号、扇区号排列:读完全部扇区后，需要换磁头更换磁道，时间消耗大。若按柱面(磁道)号、盘面号、扇区号顺序:读完全部扇区后，直接换另外一个盘面的磁头读，相当于只要启动另外一个磁头，时间消耗小</code></p>
+<p><img src="/%5Cimages%5C2022-09-15-13-04-18-image.png"></p>
+<h2 id="磁盘阵列"><a href="#磁盘阵列" class="headerlink" title="磁盘阵列"></a>磁盘阵列</h2><p><img src="/%5Cimages%5C2022-09-15-13-10-52-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-13-11-51-image.png"></p>
+<p><img src="/%5Cimages%5C2022-09-15-13-12-34-image.png"></p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第三章 存储系统</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第三章 存储系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>移码</title>
+    <url>/2022/09/08/%E7%A7%BB%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%811.jpg"></p>
+<span id="more"></span>
+
+<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%812.jpg"></p>
+<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%813.jpg"></p>
+<p><img src="/%5Cimages%5C%E7%A7%BB%E7%A0%814.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1086,46 +1098,12 @@
       </tags>
   </entry>
   <entry>
-    <title>磁盘存储器</title>
-    <url>/2022/09/13/%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="外存储器"><a href="#外存储器" class="headerlink" title="外存储器"></a>外存储器</h2><ul>
-<li><p><code>磁盘存储器：每次写入或读出一比特，不能同时写或读</code></p>
-</li>
-<li><p><code>固态硬盘(SSD)</code></p>
-<span id="more"></span></li>
-</ul>
-<p><img src="/%5Cimages%5C2022-09-15-12-53-21-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-12-55-59-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-12-57-03-image.png"></p>
-<h3 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h3><p><img src="/%5Cimages%5C2022-09-15-12-58-12-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-12-59-45-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-13-00-31-image.png"></p>
-<h3 id="磁盘地址和工作过程"><a href="#磁盘地址和工作过程" class="headerlink" title="磁盘地址和工作过程"></a>磁盘地址和工作过程</h3><p><code>为什么磁盘地址是柱面(磁道)号、盘面号、扇区号顺序?</code></p>
-<p><code>若按盘面号，柱面(磁道)号、扇区号排列:读完全部扇区后，需要换磁头更换磁道，时间消耗大。若按柱面(磁道)号、盘面号、扇区号顺序:读完全部扇区后，直接换另外一个盘面的磁头读，相当于只要启动另外一个磁头，时间消耗小</code></p>
-<p><img src="/%5Cimages%5C2022-09-15-13-04-18-image.png"></p>
-<h2 id="磁盘阵列"><a href="#磁盘阵列" class="headerlink" title="磁盘阵列"></a>磁盘阵列</h2><p><img src="/%5Cimages%5C2022-09-15-13-10-52-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-13-11-51-image.png"></p>
-<p><img src="/%5Cimages%5C2022-09-15-13-12-34-image.png"></p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第三章 存储系统</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第三章 存储系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>补码的乘法运算</title>
-    <url>/2022/09/09/%E8%A1%A5%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
+    <title>补码除法</title>
+    <url>/2022/09/10/%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95.jpg"></p>
 <span id="more"></span>
 
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%952.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1139,12 +1117,13 @@
       </tags>
   </entry>
   <entry>
-    <title>补码除法</title>
-    <url>/2022/09/10/%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%95.jpg"></p>
+    <title>补码的乘法运算</title>
+    <url>/2022/09/09/%E8%A1%A5%E7%A0%81%E7%9A%84%E4%B9%98%E6%B3%95%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%951.jpg"></p>
 <span id="more"></span>
 
-<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E9%99%A4%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%952.jpg"></p>
+<p><img src="/%5Cimages%5C%E8%A1%A5%E7%A0%81%E4%B9%98%E6%B3%953.jpg"></p>
 ]]></content>
       <categories>
         <category>计组</category>
@@ -1279,6 +1258,39 @@
       </tags>
   </entry>
   <entry>
+    <title>进位计数制</title>
+    <url>/2022/09/08/%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>十进制、二进制、八进制、十六进制</p>
+<span id="more"></span>
+
+<h3 id="r进制计数法"><a href="#r进制计数法" class="headerlink" title="r进制计数法"></a>r进制计数法</h3><p><code>基数</code>: 每个数码位所用到的不同符号的个数，r进制的基数为r</p>
+<p>计算机为什么用二进制</p>
+<ul>
+<li><p>可使用两个稳定状态的物理器件表示</p>
+</li>
+<li><p>0，1正好对应逻辑值假、真。方便实现逻辑运算</p>
+</li>
+<li><p>可很方便地使用逻辑门电路实现算术运算</p>
+</li>
+</ul>
+<h3 id="二进制-lt-–-gt-八进制、十六进制"><a href="#二进制-lt-–-gt-八进制、十六进制" class="headerlink" title="二进制&lt;–&gt;八进制、十六进制"></a>二进制&lt;–&gt;八进制、十六进制</h3><p>3个一组，四个一组</p>
+<h3 id="十进制-gt-任意进制"><a href="#十进制-gt-任意进制" class="headerlink" title="十进制-&gt;任意进制"></a>十进制-&gt;任意进制</h3><p>除基取余法：求整数，先求的是整数低位</p>
+<p>乘基取整法：求小数，先求的是小数高位</p>
+<h3 id="真值和机器数"><a href="#真值和机器数" class="headerlink" title="真值和机器数"></a>真值和机器数</h3><p>真值：实际的带正负号的数值（人类习惯的样子）</p>
+<p>机器数：把正负数字化的数（存在机器里的样子）</p>
+]]></content>
+      <categories>
+        <category>计组</category>
+        <category>408</category>
+        <category>第二章 数据的表示和运算</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>408</tag>
+        <tag>第二章 数据的表示和运算</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机系统的结构层次</title>
     <url>/2022/09/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%E5%B1%82%E6%AC%A1/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算机系统从程序员的角度可以分为5层</p>
@@ -1324,39 +1336,6 @@
         <tag>计组</tag>
         <tag>408</tag>
         <tag>第三章 存储系统</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>进位计数制</title>
-    <url>/2022/09/08/%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>十进制、二进制、八进制、十六进制</p>
-<span id="more"></span>
-
-<h3 id="r进制计数法"><a href="#r进制计数法" class="headerlink" title="r进制计数法"></a>r进制计数法</h3><p><code>基数</code>: 每个数码位所用到的不同符号的个数，r进制的基数为r</p>
-<p>计算机为什么用二进制</p>
-<ul>
-<li><p>可使用两个稳定状态的物理器件表示</p>
-</li>
-<li><p>0，1正好对应逻辑值假、真。方便实现逻辑运算</p>
-</li>
-<li><p>可很方便地使用逻辑门电路实现算术运算</p>
-</li>
-</ul>
-<h3 id="二进制-lt-–-gt-八进制、十六进制"><a href="#二进制-lt-–-gt-八进制、十六进制" class="headerlink" title="二进制&lt;–&gt;八进制、十六进制"></a>二进制&lt;–&gt;八进制、十六进制</h3><p>3个一组，四个一组</p>
-<h3 id="十进制-gt-任意进制"><a href="#十进制-gt-任意进制" class="headerlink" title="十进制-&gt;任意进制"></a>十进制-&gt;任意进制</h3><p>除基取余法：求整数，先求的是整数低位</p>
-<p>乘基取整法：求小数，先求的是小数高位</p>
-<h3 id="真值和机器数"><a href="#真值和机器数" class="headerlink" title="真值和机器数"></a>真值和机器数</h3><p>真值：实际的带正负号的数值（人类习惯的样子）</p>
-<p>机器数：把正负数字化的数（存在机器里的样子）</p>
-]]></content>
-      <categories>
-        <category>计组</category>
-        <category>408</category>
-        <category>第二章 数据的表示和运算</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>408</tag>
-        <tag>第二章 数据的表示和运算</tag>
       </tags>
   </entry>
 </search>
